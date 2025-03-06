@@ -1,0 +1,127 @@
+music_station = "Superevents_MMCT"
+music = {
+    song = "bruderkrieg_MMCT"
+    chance = {
+      modifier = { factor = 1 }
+    }
+}
+music = {
+song = "RCW"
+    chance = {
+      modifier = { factor = 1 }
+    }
+}	
+music = {
+song = "Napoleon"
+    chance = {
+      modifier = { factor = 1 }
+    }
+}	
+music = {
+    song = "Bavariaunitegermany"
+    chance = {
+      modifier = { factor = 1 }
+    }
+}
+music = {
+song = "Osmanreturned"
+    chance = {
+      modifier = { factor = 1 }
+    }
+}	
+music = {
+song = "Prussiaunitegermany"
+    chance = {
+      modifier = { factor = 1 }
+    }
+}
+music = {
+    song = "Russo-japanese"
+    chance = {
+      modifier = { factor = 1 }
+    }
+}
+music = {
+song = "SPRcivilwar"
+    chance = {
+      modifier = { factor = 1 }
+    }
+}	
+music = {
+song = "WWII"
+    chance = {
+      modifier = { factor = 1 }
+    }
+}	
+	music = {
+song = "Yogaslaviaunited"
+    chance = {
+      modifier = { factor = 1 }
+    }
+}	
+music = {
+song = "Yugoslaviunitedcom"
+    chance = {
+      modifier = { factor = 1 }
+    }	
+}	
+music = {
+song = "Kornilovsokoevistuplenie"
+    chance = {
+      modifier = { factor = 1 }
+    }	
+}	
+music = {
+song = "February_revolution"
+    chance = {
+      modifier = { factor = 1 }
+    }
+}	
+music = {
+song = "usacivwar"
+    chance = {
+      modifier = { factor = 1 }
+    }	
+}
+music = {
+song = "rusnewtsar"
+    chance = {
+      modifier = { factor = 1 }
+    }	
+}
+music = {
+song = "whiterussiawonreds"
+    chance = {
+      modifier = { factor = 1 }
+    }	
+}
+music = {
+song = "redrussiawonwhite"
+    chance = {
+      modifier = { factor = 1 }
+    }	
+}
+music = {
+song = "franceagainstgermany"
+    chance = {
+      modifier = { factor = 1 }
+    }	
+}
+music = {
+song = "Cossack_1937"
+    chance = {
+      modifier = { factor = 1 }
+    }	
+}
+music = {
+song = "parade_in_berlin"
+    chance = {
+      modifier = { factor = 1 }
+    }	
+}
+music = {
+song = "turkestan_unification_music"
+    chance = {
+      modifier = { factor = 1 }
+    }	
+}
