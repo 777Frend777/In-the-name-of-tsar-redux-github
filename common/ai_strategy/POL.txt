@@ -1,0 +1,228 @@
+# befriend
+# conquer
+# antagonize
+# build_ship
+# build_army
+# unit_ratio
+# build_building
+# research_tech
+# garrison
+# protect
+# influence
+
+british_help_against_germany = {
+	allowed = {
+		original_tag = POL
+	}
+	enable = {
+			GER = { has_war_with = POL }
+		}
+		country_exists = ENG
+	}
+	abort = {
+		NOT = { country_exists = ENG }
+	}
+
+	ai_strategy = {
+		type = befriend
+		id = "ENG"
+		value = 200
+	}
+
+POL_trade_with_uk = {
+	# UK has a mirrored version of this
+	allowed = {
+		original_tag = POL
+	}
+	enable = {
+		OR = {
+			has_government = neutrality
+			has_government = democratic
+		}
+		ENG = { has_government = democratic }
+	}
+	abort_when_not_enabled = yes
+
+	ai_strategy = {
+		type = equipment_market_trade_desire
+		id = ENG
+		value = 60
+	}
+}
+
+POL_trade_with_sweden = {
+	# Sweden has a mirrored version of this
+	allowed = {
+		original_tag = POL
+	}
+	enable = {
+		OR = {
+			has_government = neutrality
+			has_government = democratic
+		}
+		SWE = { has_government = democratic }
+	}
+	abort_when_not_enabled = yes
+
+	ai_strategy = {
+		type = equipment_market_trade_desire
+		id = SWE
+		value = 60
+	}
+}
+
+POL_template_design = {
+	allowed = {
+		original_tag = POL
+	}
+	enable = {
+		date < 1936.1.1
+	}
+	abort = {
+		date > 1945.1.1
+	}
+
+	ai_strategy = {
+		type = template_prio
+		id = cavalry
+		value = 1000
+	}
+}
+
+POL_dont_ally_germany_pls = {
+	allowed = {
+		original_tag = POL
+	}
+	enable = {
+		is_historical_focus_on = yes
+		NOT = { has_government = fascism }
+	}
+
+	abort = {
+		has_global_flag = poland_swap_danzig
+	}
+
+	ai_strategy = {
+		type = alliance
+		id = "GER"
+		value = -5000
+	}
+}
+
+POL_defend_from_russia = {
+	allowed = {
+		original_tag = POL
+	}
+	enable = {
+		NOT = { has_government = fascism }
+	}
+	abort = {
+		NOT = { country_exists = RUS }
+	}
+
+ai_strategy = {
+    type = garrison
+    value = 10000
+	}
+}
+
+POL_be_ready_against_russia = {
+	allowed = {
+		original_tag = POL
+	}
+	enable = {
+		NOT = { has_government = fascism }
+	}
+	abort = {
+		NOT = { country_exists = RUS }
+	}
+
+ai_strategy = {
+    type = prepare_for_war
+    id = RUS
+    value = 10000
+}
+}
+
+POL_buffs_against_russia = {
+	allowed = {
+		original_tag = POL
+	}
+	enable = {
+		NOT = { has_government = fascism }
+	}
+	abort = {
+		NOT = { country_exists = RUS }
+	}
+
+ai_strategy = {
+    type = front_control
+    state_trigger = {
+        industrial_complex > 5
+        is_owned_by = POL
+    }
+    ratio = 0.1
+    ordertype = front
+    execution_type = rush
+    manual_attack = no
+}
+}
+
+POL_buffs_in_war = {
+	allowed = {
+		original_tag = POL
+	}
+	enable = {
+		NOT = { has_government = fascism }
+	}
+	abort = {
+		NOT = { country_exists = RUS }
+	}
+
+ai_strategy = {
+    type = put_unit_buffers
+    ratio = 0.7
+    states = {
+        10
+        98
+        90
+        87
+    }
+    subtract_fronts_from_need = yes
+}
+}
+
+POL_ai_help_lol = {
+	allowed = {
+		original_tag = POL
+	}
+	enable = {
+		NOT = { has_government = fascism }
+	}
+	abort = {
+		NOT = { country_exists = RUS }
+	}
+
+ai_strategy = {
+    type = invade
+    id = RUS
+    value = -1000
+}
+}
+
+POL_ai_help_lol = {
+	allowed = {
+		original_tag = POL
+	}
+	enable = {
+		NOT = { has_government = fascism }
+	}
+	abort = {
+		NOT = { country_exists = RUS }
+	}
+
+ai_strategy = {
+    type = garrison_reinforcement_priority
+    value = 1000
+}
+}

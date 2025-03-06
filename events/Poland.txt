@@ -1,0 +1,811 @@
+#MADE BY FOKEU
+
+add_namespace = pol
+country_event = { #idependence war
+	id = pol.1
+	title = pol.1.t
+	desc = pol.1.d
+	picture = GFX_report_event_generic_panzer_attack
+	is_triggered_only = yes
+	immediate = {
+		hidden_effect = {
+			RUS = {
+				end_puppet = POL
+			}
+			ROM = { #romania always refuses to join the war
+				set_truce = {
+					target = POL
+					days = 100
+				}
+			}
+			88 = {
+				set_demilitarized_zone = no
+			}
+			97 = {
+				set_demilitarized_zone = no
+			}
+			POL = {
+				add_manpower = -100
+				add_ideas = POL_spirit_of_freedom1
+				remove_ideas = POL_clock_is_ticking
+				set_party_name = { 
+					ideology = democratic
+					long_name = POL_tempgov_long
+					name = POL_tempgov
+				}
+				add_Stability = 0.15
+				set_politics = {
+					ruling_party = democratic
+					elections_allowed = no
+				}
+				drop_cosmetic_tag = yes
+				leave_faction = yes
+				declare_war_on = {
+					target = RUS
+					type = annex_everything
+				}
+				declare_war_on = {
+					target = KRW
+					type = annex_everything
+				}
+				activate_mission = POL_dont_surrender
+			}
+		}
+	}	
+
+	option = {
+		name = pol.1.a	
+		ai_chance = { factor = 100 }
+		POL = {
+			88 = {
+				create_unit = {
+					division = "name = \"Galicia Rebels\" division_template = \"Dywizja Piechoty\" start_manpower_factor = 0.3"
+					owner = POL
+					allow_spawning_on_enemy_provs = yes
+					prioritize_location = 442
+					count = 2
+				}
+			}
+		}
+	}
+#peace decision
+}
+
+country_event = { #polish victory
+	id = pol.2
+	title = pol.2.t
+	desc = pol.2.d
+	picture = GFX_report_event_POL_resistance
+	is_triggered_only = yes
+	immediate = {
+		hidden_effect = {
+			POL = {
+				add_stability = 0.2
+				load_focus_tree = {
+					tree = polandindependence
+				}
+				country_event = {
+					id = pol.24
+					days = 30
+				}
+				transfer_state = 97
+				transfer_state = 88
+				white_peace = RUS
+				set_truce = {
+					target = RUS
+					days = 360
+				}
+				set_truce = {
+					target = KRW
+					days = 360
+				}
+				remove_wargoal = {
+					type = all
+					target = KRW
+				}
+				remove_ideas = {
+					POL_spirit_of_freedom1
+					POL_spirit_of_freedom2
+					POL_spirit_of_freedom3
+				}
+				add_timed_idea = {
+					idea = POL_destruction
+					days = 180
+				}
+				country_event = {
+					id = pol.10
+					days = 60
+				}
+			}
+			RUS = {
+				transfer_state = 814
+			}
+		}
+	}
+
+	option = {
+		name = pol.2.a	
+		hidden_effect = {
+			load_focus_tree = {
+				tree = polandindependence
+			}
+		}
+		ai_chance = { factor = 100 }
+	}
+}
+country_event = { #russian victory
+	id = pol.3
+	title = pol.3.t
+	desc = pol.3.d
+	picture = GFX_report_event_POL_train_bomb
+	is_triggered_only = yes
+	immediate = {
+		hidden_effect = {
+			POL = {
+				add_stability = 0.1
+				white_peace = RUS
+				set_cosmetic_tag = POL_RUS
+				load_focus_tree = {
+					tree = polandrussialapdog
+				}
+				remove_wargoal = {
+					type = all
+					target = KRW
+				}
+				remove_ideas = {
+					POL_spirit_of_freedom1
+					POL_spirit_of_freedom2
+					POL_spirit_of_freedom3
+				}
+				add_timed_idea = {
+					idea = POL_destruction
+					days = 180
+				}
+			}
+			RUS = {
+				puppet = POL
+			}
+		}
+	}
+
+	option = {
+		name = pol.3.a	
+		ai_chance = { factor = 100 }
+	}
+}
+country_event = { #russian civil war after russian victory, garrison fails
+	id = pol.5
+	title = pol.5.t
+	desc = pol.5.d
+	picture = GFX_report_event_generic_panzer_attack
+	is_triggered_only = yes
+	immediate = {
+		hidden_effect = {
+			POL = {
+				drop_cosmetic_tag = yes
+				load_focus_tree = {
+					tree = polandindependence
+				}
+				set_politics = {
+					ruling_party = democratic
+					elections_allowed = no
+				}
+				unlock_national_focus = POL_revenge 
+				unlock_national_focus = POL_letter_to_tsar
+				remove_ideas = POL_puppet_government
+				add_timed_idea = {
+					idea = POL_destruction
+					days = 180
+				}
+				country_event = {
+					id = pol.10
+					days = 60
+				}
+				country_event = {
+					id = pol.24
+					days = 30
+				}
+			}
+			RUS = {
+				end_puppet = POL
+			}
+			white_peace = KUB
+			white_peace = DON
+		}
+	}
+
+	option = {
+		name = pol.5.a	
+		ai_chance = { factor = 100 }
+	}
+}
+
+################
+#focus events
+country_event = { #smuggle weapons
+	id = pol.4
+	title = pol.4.t
+	desc = pol.4.d
+	picture = GFX_report_event_generic_diplomacy3
+	is_triggered_only = yes
+
+	option = {
+		name = pol.4.a	
+		ai_chance = { factor = 100 }
+		POL = {
+			add_equipment_to_stockpile = {
+				type = infantry_equipment
+				amount = 600
+				producer = RUS
+			}
+			add_equipment_to_stockpile = {
+				type = infantry_equipment
+				amount = 200
+				producer = CZE
+			}
+			add_equipment_to_stockpile = {
+				type = infantry_equipment
+				amount = 300
+				producer = GER
+			}
+		}
+	}
+}
+country_event = { #disarmament
+	id = pol.6
+	title = pol.6.t
+	desc = pol.6.d
+	picture = GFX_report_event_HOL_mass_arrests
+	is_triggered_only = yes
+
+	option = {
+		name = pol.6.a	
+		ai_chance = { factor = 100 }
+		POL = {
+			add_equipment_to_stockpile = {
+				type = infantry_equipment
+				amount = 300
+				producer = RUS
+			}
+			add_equipment_to_stockpile = {
+				type = infantry_equipment
+				amount = 50
+				producer = CZE
+			}
+			add_equipment_to_stockpile = {
+				type = infantry_equipment
+				amount = 300
+				producer = GER
+			}
+			add_equipment_to_stockpile = {
+				type = infantry_equipment
+				amount = 50
+				producer = AUS
+			}
+			add_equipment_to_stockpile = {
+				type = infantry_equipment
+				amount = 300
+				producer = POL
+			}
+			add_equipment_to_stockpile = {
+				type = infantry_equipment
+				amount = 50
+				producer = HUN
+			}
+		}
+	}
+}
+country_event = { #cyrylic
+	id = pol.7
+	title = pol.7.t
+	desc = pol.7.d
+	picture = GFX_report_event_RUS_Latinization
+	is_triggered_only = yes
+
+	option = {
+		name = pol.7.a	
+		ai_chance = { factor = 100 }
+		if = {
+			limit = {
+				POL = {
+					has_completed_focus = POL_artificial_culture
+					has_completed_focus = POL_mandatory_russian
+				}
+			}
+			add_ideas = POL_puppet_government
+			add_political_power = 10
+		}
+		else = {
+			add_political_power = 10
+		}
+	}
+}
+country_event = { #mandatory russian
+	id = pol.8
+	title = pol.8.t
+	desc = pol.8.d
+	picture = GFX_OTT_Military_School
+	is_triggered_only = yes
+
+	option = {
+		name = pol.8.a	
+		ai_chance = { factor = 100 }
+		if = {
+			limit = {
+				POL = {
+					has_completed_focus = POL_artificial_culture
+					has_completed_focus = POL_cyrylic
+				}
+			}
+			add_ideas = POL_puppet_government
+			add_political_power = 10
+		}
+		else = {
+			add_political_power = 10
+		}
+	}
+}
+country_event = { #artificial culture
+	id = pol.9
+	title = pol.9.t
+	desc = pol.9.d
+	picture = GFX_report_event_POL_pacta_conventa
+	is_triggered_only = yes
+
+	option = {
+		name = pol.9.a	
+		ai_chance = { factor = 100 }
+		if = {
+			limit = {
+				POL = {
+					has_completed_focus = POL_cyrylic
+					has_completed_focus = POL_mandatory_russian
+				}
+			}
+			add_ideas = POL_puppet_government
+			add_political_power = 10
+		}
+		else = {
+			add_political_power = 10
+		}
+	}
+}
+#elections
+country_event = { 
+	id = pol.10
+	title = pol.10.t
+	desc = pol.10.d
+	picture = GFX_report_event_POL_council
+	is_triggered_only = yes
+
+	option = {
+		name = pol.10.a	#socialists
+		ai_chance = { factor = 30 }
+		set_politics = {
+			ruling_party = socialist
+			elections_allowed = no
+			last_election = "1935.12.17"
+			election_frequency = 48
+		}
+		set_party_name = { 
+			ideology = democratic
+			long_name = POL_democratic_party_long
+			name = POL_democratic_party
+		}
+		complete_national_focus = POL_PPS_gov
+	}
+	option = { #liberals
+		name = pol.10.b
+		ai_chance = { factor = 30 }
+		set_politics = {
+			ruling_party = democratic
+			elections_allowed = no
+			last_election = "1935.12.17"
+			election_frequency = 48
+			long_name = POL_democratic_party_long
+			name = POL_democratic_party
+		}
+		set_party_name = { 
+			ideology = democratic
+			long_name = POL_democratic_party_long
+			name = POL_democratic_party
+		}
+		retire_country_leader = yes
+		complete_national_focus = POL_PSL_gov
+	}
+	option = { #conservatives
+		name = pol.10.c
+		ai_chance = { factor = 25 }
+		set_politics = {
+			ruling_party = conservatives
+			elections_allowed = no
+			last_election = "1935.12.17"
+			election_frequency = 48
+		}
+		set_party_name = { 
+			ideology = democratic
+			long_name = POL_democratic_party_long
+			name = POL_democratic_party
+		}
+		complete_national_focus = POL_ChD_gov
+	}
+	option = { #nationalists
+		name = pol.10.e
+		ai_chance = { factor = 15 }
+		set_politics = {
+			ruling_party = fascism
+			elections_allowed = no
+			last_election = "1935.12.17"
+			election_frequency = 48
+		}
+		set_party_name = { 
+			ideology = democratic
+			long_name = POL_democratic_party_long
+			name = POL_democratic_party
+		}
+		complete_national_focus = POL_SN_gov
+	}
+}
+country_event = { #build a monument
+	id = pol.11
+	title = pol.11.t
+	desc = pol.11.d
+	picture = GFX_report_event_ARM_construction_Tsitsernakaberd
+	is_triggered_only = yes
+
+	option = {
+		name = pol.11.a	
+		ai_chance = { factor = 100 }
+		add_trait = {
+			character = POL_roman_dmowski
+			ideology = fascism_ideology
+			trait = INOT_cult_of_leader
+		}
+	}
+}
+country_event = { #army reform
+	id = pol.12
+	title = pol.12.t
+	desc = pol.12.d
+	picture = GFX_report_event_POL_army_march
+	is_triggered_only = yes
+
+	option = {
+		name = pol.12.a	
+		ai_chance = { factor = 100 }
+	}
+}
+country_event = { #army reform independence
+	id = pol.13
+	title = pol.13.t
+	desc = pol.13.d
+	picture = GFX_report_event_POL_army_march
+	is_triggered_only = yes
+
+	option = {
+		name = pol.13.a	
+		ai_chance = { factor = 100 }
+		#add_trait = {
+		#	character = TAG_my_leader
+		#	ideology = liberalism
+		#	trait = INOT_cult_of_leader
+		#}
+	}
+}
+country_event = { #lore
+	id = pol.14
+	title = pol.14.t
+	desc = pol.14.d
+	picture = GFX_report_event_POL_flag
+	is_triggered_only = no
+	fire_only_once = yes
+	trigger = {
+		original_tag = POL
+	}
+	mean_time_to_happen = {
+		days = 2
+	}
+	option = {
+		name = pol.14.a	
+		ai_chance = { factor = 100 }
+		country_event = {
+			id = pol.15
+			days = 5
+		}
+	}
+}
+country_event = { #guide
+	id = pol.15
+	title = pol.15.t
+	desc = pol.15.d
+	picture = GFX_report_event_POL_flag
+	is_triggered_only = yes
+	fire_only_once = yes
+
+	option = {
+		name = pol.15.a	
+		ai_chance = { factor = 100 }
+	}
+}
+country_event = { #loosing control
+	id = pol.16
+	title = pol.16.t
+	desc = pol.16.d
+	picture = GFX_report_event_POL_assassination
+	is_triggered_only = no
+	fire_only_once = yes
+	trigger = {
+		original_tag = POL
+		POL = {
+			focus_progress = {
+				focus = POL_destroy_resistance
+				progress > 0.5
+			}
+		}
+	}
+	option = {
+		name = pol.16.a	
+		ai_chance = { factor = 100 }
+		add_political_power = -30
+		add_Stability = -0.1
+		88 = {
+			set_demilitarized_zone = yes
+		}
+		97 = {
+			set_demilitarized_zone = yes
+		}
+	}
+}
+country_event = { #end of democracy
+	id = pol.17
+	title = pol.17.t
+	desc = pol.17.d
+	picture = GFX_report_event_POL_council
+	is_triggered_only = yes
+	fire_only_once = yes
+	option = {
+		name = pol.17.a	
+		ai_chance = { factor = 100 }
+	}
+}
+country_event = { #four year plan
+	id = pol.18
+	title = pol.18.t
+	desc = pol.18.d
+	picture = GFX_report_event_FNG_industry3
+	is_triggered_only = yes
+	fire_only_once = yes
+	option = {
+		name = pol.18.a	
+		ai_chance = { factor = 100 }
+	}
+}
+country_event = { #event for russia
+	id = pol.19
+	title = pol.19.t
+	desc = pol.19.d
+	picture = GFX_report_event_RUS_riders
+	is_triggered_only = yes
+	fire_only_once = yes
+	trigger = {
+		tag = RUS
+		POL = {
+			controls_province = 11479
+			controls_province = 3393
+			controls_province = 422
+			controls_province = 406
+			has_war_with = RUS
+		}
+	}
+	option = { #accept
+		name = pol.19.a	
+		ai_chance = { factor = 100 }
+		POL = {
+			country_event = pol.20
+		}
+		add_political_power = -100
+	}
+	option = { #refuse
+		name = pol.19.b
+		ai_chance = { factor = 0 }
+		add_Stability = -0.05
+		add_manpower = -7000
+		add_equipment_to_stockpile = {
+			type = infantry_equipment
+			amount = -2000
+		}
+	}
+}
+country_event = { #event for poland
+	id = pol.20
+	title = pol.20.t
+	desc = pol.20.d
+	picture = GFX_report_event_generic_diplomacy1
+	is_triggered_only = yes
+	fire_only_once = yes
+	option = {
+		name = pol.20.a	
+		ai_chance = { factor = 100 }
+		RUS = {
+			white_peace = {
+				tag = POL
+			}
+		}
+		POL = {
+			if = {
+				limit = {
+					784 = {
+						is_owned_by = RUS
+					}
+				}
+				transfer_state = 784
+			}
+			if = {
+				limit = {
+					96 = {
+						is_owned_by = RUS
+					}
+				}
+				transfer_state = 96
+			}
+			if = {
+				limit = {
+					95 = {
+						is_owned_by = RUS
+					}
+				}
+				transfer_state = 95
+			}
+			if = {
+				limit = {
+					94 = {
+						is_owned_by = RUS
+					}
+				}
+				transfer_state = 94
+			}
+			if = {
+				limit = {
+					91 = {
+						OR = {
+							is_owned_by = RUS
+							is_owned_by = KRW
+						}
+					}
+				}
+				transfer_state = 91
+			}
+			if = {
+				limit = {
+					89 = {
+						OR = {
+							is_owned_by = RUS
+							is_owned_by = KRW
+						}
+					}
+				}
+				transfer_state = 89
+			}
+			if = {
+				limit = {
+					80 = {
+						OR = {
+							is_owned_by = RUS
+							is_owned_by = KRW
+						}
+					}
+				}
+				transfer_state = 80
+			}
+			if = {
+				limit = {
+					73 = {
+						OR = {
+							is_owned_by = RUS
+							is_owned_by = KRW
+						}
+					}
+				}
+				transfer_state = 73
+			}
+		}
+	}
+}
+country_event = { #event for controller of zaolzie
+	id = pol.21
+	title = pol.21.t
+	desc = pol.21.d
+	picture = GFX_report_event_generic_scandal
+	is_triggered_only = yes
+	fire_only_once = yes
+	option = {
+		name = pol.21.a	#yes
+		ai_chance = { 
+			base = 10
+			modifier = {
+				factor = 2137
+				ROOT = {
+					has_war = yes
+				}
+			}
+			modifier = {
+				factor = 30
+				ROOT = {
+					strength_ratio = {
+						tag = POL
+						ratio < 1
+					}
+				}
+			}
+			modifier = {
+				factor = 2137
+				ROOT = {
+					strength_ratio = {
+						tag = POL
+						ratio < 0.5
+					}
+				}
+			}
+		}
+		POL = {
+			transfer_state = 72
+			country_event = {
+				id = pol.22
+				days = 1
+			}
+		}
+	}
+	option = {
+		name = pol.21.b #no
+		ai_chance = { 
+			base = 90
+		}
+		POL = {
+			create_wargoal = {
+				type = take_state_focus
+				target = ROOT
+				generator = { 72 }
+			}
+			country_event = {
+				id = pol.23
+				days = 1
+			}
+		}
+	}
+}
+country_event = { #for poland, zaolzie accept
+	id = pol.22
+	title = pol.22.t
+	desc = pol.22.d
+	picture = GFX_report_event_generic_diplomacy3
+	is_triggered_only = yes
+	fire_only_once = yes
+	option = {
+		name = pol.22.a	
+		ai_chance = { factor = 100 }
+	}
+}
+country_event = { #for poland, zaolzie deny
+	id = pol.23
+	title = pol.23.t
+	desc = pol.23.d
+	picture = GFX_report_event_generic_towar
+	is_triggered_only = yes
+	fire_only_once = yes
+	option = {
+		name = pol.23.a	
+		ai_chance = { factor = 100 }
+	}
+}
+country_event = { 
+	id = pol.24
+	title = pol.24.t
+	desc = pol.24.d
+	picture = GFX_report_event_POL_ONR
+	is_triggered_only = yes
+	fire_only_once = yes
+	option = {
+		name = pol.24.a	
+		ai_chance = { factor = 100 }
+	}
+}

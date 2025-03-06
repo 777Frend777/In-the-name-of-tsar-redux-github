@@ -1,0 +1,24 @@
+
+state={
+	impassable = yes
+	id=273
+	name="STATE_273"
+
+	history={
+		owner = LBA
+		buildings = {
+			infrastructure = 0
+
+		}
+		add_core_of = LBA
+
+	}
+
+	provinces={
+		1994 
+	}
+	manpower=280
+	buildings_max_level_factor=1.000
+	state_category=wasteland
+	local_supplies=0.000
+}

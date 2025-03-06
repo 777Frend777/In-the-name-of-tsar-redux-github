@@ -1,0 +1,112 @@
+focus_tree = {
+	id = HMB_focuses
+	country = {
+		factor = 0
+		modifier = {
+			add = 10
+			tag = HMB
+		}
+	}
+	default = no
+	focus = {
+		id = HMB_Mobilization_for_revolt
+		icon = GFX_focus_SWE_refuge_for_revolutionaries
+		cost = 1
+		x = 9
+		y = 1
+completion_reward = { 
+BAV = {add_to_faction = HMB} 
+           capital_scope = {
+create_unit = {
+division = "name = \"Infanterie-Abteilung\" division_template = \"Leichte Infanteriedivision\" start_experience_factor = 0.85 start_equipment_factor = 1"
+owner = ROOT
+}
+create_unit = {
+division = "name = \"Infanterie-Abteilung\" division_template = \"Leichte Infanteriedivision\" start_experience_factor = 0.85 start_equipment_factor = 1"
+owner = ROOT
+}
+create_unit = {
+division = "name = \"Infanterie-Abteilung\" division_template = \"Leichte Infanteriedivision\" start_experience_factor = 0.85 start_equipment_factor = 1"
+owner = ROOT
+}
+}
+        }
+ }
+
+	focus = {
+		id = HMB_MARCH_ON_BERLIN
+		icon = GFX_focus_SWE_organize_a_putsch
+		cost = 3
+		prerequisite = {
+			focus = HMB_Mobilization_for_revolt
+		}
+		x = 9
+		y = 2
+completion_reward = {
+add_ideas = Hamburg_buffs
+}
+	}
+	focus = {
+		id = HMB_Fortify_hamburg
+		icon = GFX_goal_generic_defence
+		cost = 2
+		prerequisite = {
+			focus = HMB_Mobilization_for_revolt
+		}
+		x = 6
+		y = 2
+        completion_reward = {
+        HMB = {
+		961 = {
+		 add_building_construction = {
+			 type = bunker
+			 level = 6
+			 province = 9347
+			 instant_build = yes
+		    }         	
+		  } 
+	}
+	}
+	}
+	focus = {
+		id = HMB_get_weapon
+		icon = GFX_focus_secret_rearmament
+		cost = 1
+		prerequisite = {
+			focus = HMB_Mobilization_for_revolt
+		}
+		x = 12
+		y = 2
+completion_reward = {
+            add_equipment_to_stockpile = {
+                type = infantry_equipment
+                amount = 5000
+                producer = HMB	
+            }
+    }
+	}
+	focus = {
+		id = HMB_get_aviation
+		icon = GFX_goal_generic_air_fighter_new
+		cost = 2
+		prerequisite = { focus = HMB_get_weapon }
+		prerequisite = { focus = HMB_Fortify_hamburg }
+		prerequisite = { focus = HMB_MARCH_ON_BERLIN }
+		x = 9
+		y = 3
+        completion_reward = {
+			hidden_effect = {
+	load_focus_tree = GER_shared
+	complete_national_focus = GRK_world_recognition
+	complete_national_focus = GRK_commi
+	complete_national_focus = GRK_recover_civil_war
+	complete_national_focus = GRK_trade_BAV
+			}
+	add_equipment_to_stockpile = {
+    type = fighter_equipment_1
+    amount = 250
+	producer = BAV	
+}
+}
+}
+}

@@ -1,0 +1,365 @@
+ideas = {
+	country = {
+		#start
+		POL_clock_is_ticking = {
+			allowed = { always = no }
+			picture = clock_is_ticking
+			modifier = {
+				stability_weekly = -0.05
+				conscription_factor = -0.1
+			}
+		}
+		#destruction timed idea
+		POL_destruction = {
+			allowed = { always = no }
+			picture = generic_destruction
+			modifier = {
+				stability_weekly = -0.01
+				production_speed_buildings_factor = -0.1
+				production_factory_start_efficiency_factor = -0.1
+				attrition = 0.1 
+				research_speed_factor = -0.1
+				local_resources_factor = -0.1
+			}
+		}
+		#focus tree ideas
+		POL_spirit_of_freedom1 = {
+			allowed = { always = no }
+			picture = advisors_poland
+			modifier = {
+				surrender_limit = 1000 #surrender is scripted
+			}
+		}
+		POL_spirit_of_freedom2 = {
+			allowed = { always = no }
+			picture = advisors_poland
+			modifier = {
+				surrender_limit = 1000 #surrender is scripted
+				offence = 0.05
+			}
+		}
+		POL_spirit_of_freedom3 = {
+			allowed = { always = no }
+			picture = advisors_poland
+			modifier = {
+				surrender_limit = 1000 #surrender is scripted
+				offence = 0.05
+				defence = 0.3
+			}
+		}
+		POL_never_targowica1 = {
+			allowed = { always = no }
+			picture = advisors_poland
+			modifier = {
+				war_support_factor = 0.05
+				surrender_limit = 0.05
+				conscription_factor = 0.07
+			}
+		}
+		POL_never_targowica2 = {
+			allowed = { always = no }
+			picture = advisors_poland
+			modifier = {
+				war_support_factor = 0.05
+				surrender_limit = 0.05
+				conscription_factor = 0.12
+			}
+			targeted_modifier = {
+				tag = RUS
+				attack_bonus_against = 0.1
+				defense_bonus_against = 0.1
+			}
+			targeted_modifier = {
+				tag = GER
+				attack_bonus_against = 0.1
+				defense_bonus_against = 0.1
+			}
+			targeted_modifier = {
+				tag = AUS
+				attack_bonus_against = 0.1
+				defense_bonus_against = 0.1
+			}
+		}
+		POL_four_year_plan = {
+			allowed = { always = no }
+			picture = generic_improved_industries
+			modifier = {
+				production_speed_buildings_factor = 0.15
+			}
+		}
+		POL_autarky = {
+			allowed = { always = no }
+			picture = IRE_heavy_industry
+			modifier = {
+				local_resources = 0.1
+				production_factory_start_efficiency_factor = 0.1
+			}
+		}
+		POL_economic_reliance_on_rus = {
+			allowed = { always = no }
+			picture = RUS_training_barracks
+			modifier = {
+				RUS = {
+					trade_opinion_factor = 0.9
+				}
+				faction_trade_opinion_factor = 0.4
+				production_lack_of_resource_penalty_factor = -0.1
+				army_fuel_consumption_factor = -0.1
+				air_fuel_consumption_factor = -0.1
+				production_factory_start_efficiency_factor = -0.03
+			}
+		}
+		POL_pkp_idea = {
+			allowed = { always = no }
+			picture = generic_train_tracks
+			modifier = {
+				out_of_supply_factor = -0.15
+				supply_factor = 0.15
+			}
+		}
+		POL_puppet_government = {
+			allowed = { always = no }
+			picture = generic_democracy_banned
+			modifier = {
+				local_resources_factor = 0.1
+				extra_trade_to_overlord_factor = 0.1
+				overlord_trade_cost_factor = -0.1
+				political_power_gain = -0.05
+				war_support_factor = -0.2
+				production_speed_bunker_factor = 0.15
+				army_core_defence_factor = 0.1
+				army_morale_factor = -0.05
+			}
+		}
+		POL_minority_protection = {
+			allowed = { always = no }
+			picture = generic_democratic_drift_bonus
+			modifier = {
+				compliance_growth_on_our_occupied_states = -0.2
+				resistance_activity = -0.2
+				autonomy_gain = 0.2
+				army_core_defence_factor = 0.2
+			}
+		}
+		POL_gradual_polonization = {
+			allowed = { always = no }
+			picture = generic_deal_with_the_devil
+			modifier = {
+				compliance_growth_on_our_occupied_states = 0.1
+				resistance_activity = 0.1
+				autonomy_gain = 0.1
+				army_core_defence_factor = -0.04
+				non_core_manpower = 0.05
+				recruitable_population_factor = 0.05
+			}
+		}
+		POL_agressive_polonization = {
+			allowed = { always = no }
+			picture = generic_oppression
+			modifier = {
+				compliance_growth_on_our_occupied_states = 0.2
+				resistance_activity = 0.2
+				autonomy_gain = -0.2
+				army_core_defence_factor = -0.08
+				non_core_manpower = 0.1
+				recruitable_population_factor = 0.1
+			}
+		}
+		POL_jewish_slaves = {
+			allowed = { always = no }
+			picture = generic_migration
+			modifier = {
+				conscription_factor = -0.05
+				production_speed_buildings_factor = 0.1
+				production_factory_efficiency_gain_factor = 0.1
+				production_factory_max_efficiency_factor = 0.1
+				political_power_factor = -0.05
+			}
+		}
+		POL_everything = {
+			allowed = { always = no }
+			picture = FRA_scw_intervention_nationalists_focus
+			modifier = {
+				conscription_factor = 0.1
+				offence = 0.1
+				defence = 0.1
+				equipment_capture_factor = 0.2
+				army_morale = 0.1
+				coordination_bonus = -0.03
+			}
+		}
+		POL_local_communities = {
+			allowed = { always = no }
+			picture = government
+			modifier = {
+				industry_air_damage_factor = -0.3
+				surrender_limit = 0.2
+			}
+		}
+		POL_family_values = {
+			allowed = { always = no }
+			picture = SHX_christian_statism
+			modifier = {
+				recruitable_population = -0.01
+				resistance_decay = 0.1
+				monthly_population = 0.1
+			}
+		}
+		POL_capitalism_human = {
+			allowed = { always = no }
+			picture = HOL_welfare_state
+			modifier = {
+				consumer_goods_factor = 0.03
+				monthly_population = 0.07
+				stability_factor = 0.1
+			}
+		}
+		POL_christian_solidarity = { #swap capitalism human
+			allowed = { always = no }
+			picture = HOL_welfare_state
+			modifier = {
+				war_support_factor = -0.02
+				consumer_goods_factor = 0.06
+				monthly_population = 0.14
+				stability_factor = 0.2
+			}
+		}
+		POL_defender_of_faith = { 
+			allowed = { always = no }
+			picture = IRE_catholic
+			modifier = {
+				targeted_modifier = {
+					tag = RUS
+					attack_bonus_against = 0.1
+					defense_bonus_against = 0.1
+				}
+				army_morale = 5
+				defensive_war_stability_factor = 0.1
+				production_speed_bunker_factor = 0.3
+			}
+		}
+		POL_will_of_people = { 
+			allowed = { always = no }
+			picture = HOL_workplace_democracy
+			modifier = {
+				stability_factor = 0.1
+				conscription_factor = 0.05
+			}
+		}
+		POL_resocialisation = {
+			allowed = { always = no }
+			picture = idea_generic_army_war_college
+			modifier = {
+				monthly_population = 0.03
+			}
+		}
+		POL_land_reform = { 
+			allowed = { always = no }
+			picture = RUS_land_reforms
+			modifier = {
+				consumer_goods_factor = 0.03
+				production_factory_efficiency_gain_factor = 0.1 
+			}
+		}
+		POL_feed_and_defend = { 
+			allowed = { always = no }
+			picture = RUS_agricole_power
+			modifier = {
+				production_cost_industrial_complex_factor = -0.1
+				production_speed_arms_factory_factor = 0.3 
+				recruitable_population_factor = 0.03
+			}
+		}
+		POL_workers_rights = { 
+			allowed = { always = no }
+			picture = generic_syndicalist_worker
+			modifier = {
+				stability_weekly_factor = 0.3
+				war_support_weekly_factor = 0.3
+				production_factory_efficiency_gain_factor = 0.1 
+				production_factory_start_efficiency_factor = -0.05
+				consumer_goods_factor = 0.03
+			}
+		}
+		POL_provide_housing = { 
+			allowed = { always = no }
+			picture = HOL_welfare_state
+			modifier = {
+				monthly_population = 0.1
+				consumer_goods_factor = 0.02
+			}
+		}
+		POL_free_women = { 
+			allowed = { always = no }
+			picture = generic_democratic_drift_bonus
+			modifier = {
+				monthly_population = -0.05
+				stability_weekly_factor = 0.3
+			}
+		}
+		POL_onwards_warsaw = { 
+			allowed = { always = no }
+			picture = FIN_socialist_wellfare
+			modifier = {
+				production_factory_efficiency_gain_factor = 0.1
+				training_time_factor = -0.1
+				attrition = -0.1
+			}
+		}
+		POL_third_may = { 
+			allowed = { always = no }
+			picture = POL_royal_army
+			modifier = {
+				army_defence_against_major_factor = 0.1
+				army_attack_against_major_factor = 0.1
+			}
+		}
+		POL_christianisation = { 
+			allowed = { always = no }
+			picture = SPA_carlism
+			modifier = {
+				monthly_population = 0.1
+			}
+		}
+		POL_secularization = { 
+			allowed = { always = no }
+			picture = HOL_syndicalist_neutrality
+			modifier = {
+				research_speed_factor = 0.1
+			}
+		}
+		POL_construct_navy = { 
+			allowed = { always = no } #needs balance
+			picture = generic_navy
+			modifier = {
+				experience_gain_navy_unit = 0.1
+				production_cost_max_ship_hull_cruiser = -3
+				production_cost_max_ship_hull_heavy = -3
+				production_cost_max_ship_hull_light = -3
+				production_cost_max_ship_hull_submarine  = -3
+			}
+		}
+		POL_tsar_army = { 
+			allowed = { always = no }
+			picture = RUS_training_barracks
+			targeted_modifier = {
+				tag = GER
+				attack_bonus_against = 0.1
+				defense_bonus_against = 0.1
+			}
+			targeted_modifier = {
+				tag = BAV
+				attack_bonus_against = 0.1
+				defense_bonus_against = 0.1
+			}
+		}
+		POL_no_surrender = { 
+			allowed = { always = no }
+			picture = CAN_darkest_hour
+			modifier = {
+				surrender_limit = 0.3
+				war_support_factor = 0.05
+			}
+		}
+	}
+}

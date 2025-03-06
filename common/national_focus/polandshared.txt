@@ -1,0 +1,391 @@
+
+shared_focus = {
+	id = POL_four_plan
+	icon = GFX_focus_POL_the_four_year_plan
+	x = 15
+	y = 10
+	cost = 5
+
+	ai_will_do = {
+		factor = 10
+	}
+	completion_reward = {
+		add_timed_idea = {
+			idea = POL_four_year_plan
+			days = 1456
+		}
+		country_event = pol.18
+	}
+}
+shared_focus = {
+	id = POL_silesia_industry
+	icon = GFX_goal_factory_complex
+	x = -2
+	y = 1
+	cost = 5
+
+	ai_will_do = {
+		factor = 10
+	}
+	relative_position_id = POL_four_plan
+	prerequisite = {
+		focus = POL_four_plan
+	}
+	completion_reward = {
+		custom_effect_tooltip = POL_tooltip_decision
+	}
+}
+shared_focus = {
+	id = POL_warsaw_industry
+	icon = GFX_goal_POL_industry_warsaw
+	x = 0
+	y = 1
+	cost = 5
+
+	ai_will_do = {
+		factor = 10
+	}
+	relative_position_id = POL_four_plan
+	prerequisite = {
+		focus = POL_four_plan
+	}
+	completion_reward = {
+		custom_effect_tooltip = POL_tooltip_decision
+	}
+}
+shared_focus = {
+	id = POL_central_industry
+	icon = GFX_goal_POL_industry_lublin
+	x = 2
+	y = 1
+	cost = 5
+
+	ai_will_do = {
+		factor = 10
+	}
+	relative_position_id = POL_four_plan
+	prerequisite = {
+		focus = POL_four_plan
+	}
+	completion_reward = {
+		custom_effect_tooltip = POL_tooltip_decision
+	}
+}
+shared_focus = {
+	id = POL_autarky
+	icon = GFX_goal_generic_autarky
+	x = -1
+	y = 2
+	cost = 5
+
+	ai_will_do = {
+		factor = 10
+	}
+	available = {
+		NOT = {
+			is_puppet_of = RUS
+		}
+	}
+	relative_position_id = POL_four_plan
+	prerequisite = {
+		focus = POL_silesia_industry
+	}
+	prerequisite = {
+		focus = POL_warsaw_industry
+	}
+	prerequisite = {
+		focus = POL_central_industry
+	}
+	mutually_exclusive = {
+		focus = POL_reliance_russia
+	}
+	completion_reward = {
+		add_ideas = POL_autarky
+	}
+}
+shared_focus = {
+	id = POL_reliance_russia
+	icon = GFX_focus_russian_cooperation
+	x = 1
+	y = 2
+	cost = 5
+
+	ai_will_do = {
+		factor = 10
+	}
+	relative_position_id = POL_four_plan
+	prerequisite = {
+		focus = POL_silesia_industry
+	}
+	prerequisite = {
+		focus = POL_warsaw_industry
+	}
+	prerequisite = {
+		focus = POL_central_industry
+	}
+	mutually_exclusive = {
+		focus = POL_autarky
+	}
+	available = {
+		is_puppet_of = RUS
+	}
+	completion_reward = {
+		add_ideas = POL_economic_reliance_on_rus
+	}
+}
+shared_focus = {
+	id = POL_pkp
+	icon = GFX_goal_generic_railway_construction
+	x = -3
+	y = 3
+	cost = 5
+
+	ai_will_do = {
+		factor = 10
+	}
+	relative_position_id = POL_four_plan
+	prerequisite = {
+		focus = POL_autarky
+		focus = POL_reliance_russia
+	}
+	completion_reward = {
+		add_ideas = POL_pkp_idea
+	}
+}
+shared_focus = {
+	id = POL_bridge_network
+	icon = GFX_goal_generic_bridge
+	x = -1
+	y = 3
+	cost = 5
+
+	ai_will_do = {
+		factor = 10
+	}
+	relative_position_id = POL_four_plan
+	prerequisite = {
+		focus = POL_autarky
+		focus = POL_reliance_russia
+	}
+	completion_reward = {
+		random_owned_state = {
+			add_building_construction = {
+				type = infrastructure
+				level = 1
+				instant_build = yes
+			}
+		}
+		random_owned_state = {
+			add_building_construction = {
+				type = infrastructure
+				level = 1
+				instant_build = yes
+			}
+		}
+		random_owned_state = {
+			add_building_construction = {
+				type = infrastructure
+				level = 1
+				instant_build = yes
+			}
+		}
+		random_owned_state = {
+			add_building_construction = {
+				type = infrastructure
+				level = 1
+				instant_build = yes
+			}
+		}
+		random_owned_state = {
+			add_building_construction = {
+				type = infrastructure
+				level = 1
+				instant_build = yes
+			}
+		}
+	}
+}
+shared_focus = {
+	id = POL_rubber_manufacturing
+	icon = GFX_goal_KTG_Rubber_Farming
+	x = 1
+	y = 3
+	cost = 5
+
+	ai_will_do = {
+		factor = 10
+	}
+	relative_position_id = POL_four_plan
+	prerequisite = {
+		focus = POL_autarky
+		focus = POL_reliance_russia
+	}
+	completion_reward = {
+		random_owned_state = {
+			add_extra_state_shared_building_slots = 2
+			add_building_construction = {
+				type = synthetic_refinery
+				level = 3
+				instant_build = yes
+			}
+		}
+	}
+}
+shared_focus = {
+	id = POL_invest_universities
+	icon = GFX_goal_bombay_university
+	x = 3
+	y = 3
+	cost = 5
+
+	ai_will_do = {
+		factor = 10
+	}
+	relative_position_id = POL_four_plan
+	prerequisite = {
+		focus = POL_autarky
+		focus = POL_reliance_russia
+	}
+	completion_reward = {
+		custom_effect_tooltip = POL_tooltip_decision
+	}
+}
+shared_focus = {
+	id = POL_urbanisation
+	icon = GFX_goal_construction
+	x = -1
+	y = 4
+	cost = 5
+
+	ai_will_do = {
+		factor = 10
+	}
+	relative_position_id = POL_four_plan
+	prerequisite = {
+		focus = POL_bridge_network
+	}
+	completion_reward = {
+		add_building_construction = {
+			type = bunker
+			level = 1
+			instant_build = yes
+			province = 3544
+		}
+		add_building_construction = {
+			type = bunker
+			level = 1
+			instant_build = yes
+			province = 9508
+		}
+		10 = {
+			add_building_construction = {
+				type = industrial_complex
+				level = 5
+				instant_build = yes
+			}
+			add_extra_state_shared_building_slots = 1
+		}
+		87 = {
+			add_building_construction = {
+				type = industrial_complex
+				level = 5
+				instant_build = yes
+			}
+			add_extra_state_shared_building_slots = 1
+		}
+	}
+}
+shared_focus = {
+	id = POL_polska_stal
+	icon = GFX_goal_SWI_steel
+	x = 1
+	y = 4
+	cost = 5
+
+	ai_will_do = {
+		factor = 10
+	}
+	relative_position_id = POL_four_plan
+	prerequisite = {
+		focus = POL_rubber_manufacturing
+	}
+	completion_reward = {
+		67 = {
+			add_resource = {
+				type = steel
+				amount = 20
+			}
+		}
+		90 = {
+			add_resource = {
+				type = steel
+				amount = 10
+			}
+		}
+	}
+}
+shared_focus = {
+	id = POL_intellectual_renaissance
+	icon = GFX_goal_double_research
+	x = 3
+	y = 4
+	cost = 5
+
+	ai_will_do = {
+		factor = 10
+	}
+	relative_position_id = POL_four_plan
+	prerequisite = {
+		focus = POL_invest_universities
+	}
+	completion_reward = {
+		add_research_slot = 1
+	}
+}
+shared_focus = {
+	id = POL_poland_b
+	icon = GFX_goal_generic_road_construction
+	x = -1
+	y = 5
+	cost = 5
+
+	ai_will_do = {
+		factor = 10
+	}
+	relative_position_id = POL_four_plan
+	prerequisite = {
+		focus = POL_urbanisation
+	}
+	completion_reward = {
+		custom_effect_tooltip = POL_tooltip_decision
+	}
+}
+shared_focus = {
+	id = POL_invest_silesia
+	icon = GFX_goal_generic_coal_mining
+	x = 1
+	y = 5
+	cost = 5
+
+	ai_will_do = {
+		factor = 10
+	}
+	relative_position_id = POL_four_plan
+	prerequisite = {
+		focus = POL_polska_stal
+	}
+	completion_reward = {
+		67 = {
+			add_resource = {
+				type = aluminium
+				amount = 10
+			}
+		}
+		add_building_construction = {
+			type = industrial_complex
+			level = 1
+			instant_build = yes
+		}
+		add_extra_state_shared_building_slots = 1
+	}
+}

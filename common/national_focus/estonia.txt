@@ -1,0 +1,624 @@
+﻿focus_tree = {
+	id = estonianfocus
+
+	country = {
+		factor = 0
+		
+		modifier = {
+			add = 20
+			tag = EST
+		}
+	}
+	default = no
+
+	continuous_focus_position = { x = 5005 y = 1500 }
+
+			
+	focus = {
+		id = EST_convene_the_high_command
+		icon = GFX_goal_red_star_gold_wreath
+		x = 10
+		y = 0
+		cost = 0.1
+		
+		
+		available_if_capitulated = yes
+		
+	    completion_reward = {
+		
+		    army_experience = 25
+	    }
+    }
+
+    focus = {
+		id = EST_mobilize_the_army
+		icon = GFX_goal_red_star_gold_wreath
+        prerequisite = { focus = EST_convene_the_high_command }
+		x = 0
+		y = 1
+        relative_position_id = EST_convene_the_high_command
+		cost = 0.3
+		
+		
+		available_if_capitulated = yes
+		
+	    completion_reward = {
+		    add_manpower = 20000
+            
+	    }
+    }
+
+    focus = {
+		id = EST_use_armored_trains
+		icon = GFX_goal_red_star_gold_wreath
+        prerequisite = { focus = EST_mobilize_the_army }
+		x = -2
+		y = 2
+        relative_position_id = EST_convene_the_high_command
+		cost = 0.5
+		
+		
+		available_if_capitulated = yes
+		
+	    completion_reward = {
+		    add_manpower = 20000
+ 
+	    }
+    }
+
+    focus = {
+		id = EST_use_breakthrough_tactics
+		icon = GFX_goal_red_star_gold_wreath
+        prerequisite = { focus = EST_use_armored_trains }
+		x = -2
+		y = 3
+        relative_position_id = EST_convene_the_high_command
+		cost = 0.5
+		
+		
+		available_if_capitulated = yes
+		
+	    completion_reward = {
+            add_ideas = EST_breakthrough_tactics
+	    }
+    }
+
+    focus = {
+		id = EST_cry_for_help_to_the_west
+		icon = GFX_goal_red_star_gold_wreath
+        prerequisite = { focus = EST_mobilize_the_army }
+		x = 0
+		y = 2
+        relative_position_id = EST_convene_the_high_command
+		cost = 1
+		
+		
+		available_if_capitulated = yes
+		
+	    completion_reward = {
+		    add_manpower = 20000
+ 
+	    }
+    }
+
+
+    focus = {
+		id = EST_british_destroyers
+		icon = GFX_goal_red_star_gold_wreath
+        prerequisite = { focus = EST_cry_for_help_to_the_west }
+		x = 0
+		y = 3
+        relative_position_id = EST_convene_the_high_command
+		cost = 0.5
+		
+		
+		available_if_capitulated = yes
+		
+	    completion_reward = {
+		    add_manpower = 20000
+ 
+	    }
+    }
+
+    focus = {
+		id = EST_deal_with_white_guard
+		icon = GFX_goal_red_star_gold_wreath
+        prerequisite = { focus = EST_mobilize_the_army }
+		x = 2
+		y = 2
+        relative_position_id = EST_convene_the_high_command
+		cost = 0.2
+		
+		
+		available_if_capitulated = yes
+		
+	    completion_reward = {
+		    add_manpower = 20000
+ 
+	    }
+    }
+
+    focus = {
+		id = EST_deal_with_white_guard
+		icon = GFX_goal_red_star_gold_wreath
+        prerequisite = { focus = EST_mobilize_the_army }
+		x = 2
+		y = 2
+        relative_position_id = EST_convene_the_high_command
+		cost = 0.5
+		
+		
+		available_if_capitulated = yes
+		
+	    completion_reward = {
+		    add_manpower = 20000
+ 
+	    }
+    }
+
+    focus = {
+		id = EST_cooperation_with_baltic_brothers
+		icon = GFX_goal_red_star_gold_wreath
+        prerequisite = { focus = EST_deal_with_white_guard }
+		x = 2
+		y = 3
+        relative_position_id = EST_convene_the_high_command
+		cost = 0.5
+		
+		
+		available_if_capitulated = yes
+		
+	    completion_reward = {
+		    add_manpower = 20000
+ 
+	    }
+    }
+
+    focus = {
+		id = EST_carry_the_war_into_enemy_territory
+		icon = GFX_goal_red_star_gold_wreath
+        prerequisite = { focus = EST_cry_for_help_to_the_west }
+        prerequisite = { focus = EST_use_breakthrough_tactics }
+        prerequisite = { focus = EST_cooperation_with_baltic_brothers }
+		x = 0
+		y = 4
+        relative_position_id = EST_convene_the_high_command
+		cost = 0.2
+		
+		
+		available_if_capitulated = yes
+		
+	    completion_reward = {
+		    add_manpower = 20000
+	    }
+    }
+
+    focus = {
+		id = EST_marsh_to_peterburg
+		icon = GFX_goal_red_star_gold_wreath
+        prerequisite = { focus = EST_carry_the_war_into_enemy_territory }
+        mutually_exclusive = { focus = EST_status_quo_in_the_north }
+		x = -2
+		y = 5
+        relative_position_id = EST_convene_the_high_command
+		cost = 0.2
+		
+		
+		available_if_capitulated = yes
+		
+	    completion_reward = {
+		    hidden_effect = {
+                country_event = {
+                    id = estonia.1
+                    days = 35
+			    }
+			}
+	    }
+    }
+
+    focus = {
+		id = EST_control_under_pskov
+		icon = GFX_goal_red_star_gold_wreath
+        prerequisite = { focus = EST_marsh_to_peterburg focus = EST_status_quo_in_the_north }
+		x = 0
+		y = 6
+        relative_position_id = EST_convene_the_high_command
+		cost = 0.6
+		
+		
+		available_if_capitulated = yes
+		
+	    completion_reward = {
+            add_political_power = 50
+	    }
+    }
+
+	 focus = {
+		id = EST_creation_of_a_buffer_zone
+		icon = GFX_goal_red_star_gold_wreath
+        prerequisite = { focus = EST_marsh_to_peterburg }
+		prerequisite = { focus = EST_control_under_pskov }
+		x = -2
+		y = 7
+        relative_position_id = EST_convene_the_high_command
+		cost = 0.2
+		
+		
+		available_if_capitulated = yes
+		
+	    completion_reward = {
+		    add_manpower = 20000
+ 
+	    }
+    }
+
+    focus = {
+		id = EST_status_quo_in_the_north
+		icon = GFX_goal_red_star_gold_wreath
+        prerequisite = { focus = EST_carry_the_war_into_enemy_territory }
+        mutually_exclusive = { focus = EST_marsh_to_peterburg }
+		x = 2
+		y = 5
+        relative_position_id = EST_convene_the_high_command
+		cost = 0.2
+		
+		
+		available_if_capitulated = yes
+		
+	    completion_reward = {
+		    add_manpower = 20000
+ 
+	    }
+    }
+
+	focus = {
+		id = EST_start_negotiation_processes
+		icon = GFX_goal_red_star_gold_wreath
+        prerequisite = { focus = EST_status_quo_in_the_north }
+		prerequisite = { focus = EST_control_under_pskov }
+		x = 2
+		y = 7
+        relative_position_id = EST_convene_the_high_command
+		cost = 0.2
+		
+		
+		available_if_capitulated = yes
+		
+	    completion_reward = {
+		    add_manpower = 20000
+ 
+	    }
+    }
+
+	focus = {
+		id = EST_second_russo_estonian_war
+		icon = GFX_goal_red_star_gold_wreath
+		x = 17
+		y = 0
+		cost = 0.1
+		
+		
+		available_if_capitulated = yes
+		
+	    completion_reward = {
+		    army_experience = 25
+	    }
+    }
+
+	focus = {
+		id = EST_postwar_estonia
+		icon = GFX_goal_red_star_gold_wreath
+		x = 28
+		y = 0
+		cost = 4
+		
+		
+		available_if_capitulated = yes
+		
+	    completion_reward = {
+ 
+	    }
+    }
+
+	focus = {
+		id = EST_question_of_communism_on_elections
+		icon = GFX_goal_red_star_gold_wreath
+		prerequisite = { focus = EST_postwar_estonia }
+		x = -1
+		y = 1
+		relative_position_id = EST_postwar_estonia
+		cost = 4
+		
+		
+		available_if_capitulated = yes
+		
+	    completion_reward = {
+
+	    }
+    }
+
+	focus = {
+		id = EST_law_on_the_abolition_of_estates
+		icon = GFX_goal_red_star_gold_wreath
+		prerequisite = { focus = EST_postwar_estonia }
+		x = 1
+		y = 1
+		relative_position_id = EST_postwar_estonia
+		cost = 4
+		
+		
+		available_if_capitulated = yes
+		
+	    completion_reward = {
+		    add_manpower = 20000
+ 
+	    }
+    }
+
+	focus = {
+		id = EST_question_of_russians
+		icon = GFX_goal_red_star_gold_wreath
+		prerequisite = { focus = EST_postwar_estonia }
+		x = 3
+		y = 1
+		relative_position_id = EST_postwar_estonia
+		cost = 4
+		
+		
+		available_if_capitulated = yes
+		
+	    completion_reward = {
+		    country_event = {
+                id = estonia.2
+                hours = 1
+			}    
+	    }
+    }
+
+	focus = {
+		id = EST_holding_elections
+		icon = GFX_goal_red_star_gold_wreath
+		prerequisite = { focus = EST_question_of_communism_on_elections }
+		prerequisite = { focus = EST_law_on_the_abolition_of_estates }
+		x = 0
+		y = 2
+		relative_position_id = EST_postwar_estonia
+		cost = 5
+		
+		
+		available_if_capitulated = yes
+		
+	    completion_reward = {
+ 
+	    }
+    }
+
+	focus = {
+		id = EST_konstantin_pats_victory 
+		icon = GFX_goal_red_star_gold_wreath
+		prerequisite = { focus = EST_holding_elections }
+		mutually_exclusive = { focus = EST_break_elections }
+		mutually_exclusive = { focus = EST_jaan_tonison_victory }
+		x = 0
+		y = 4
+		relative_position_id = EST_postwar_estonia
+		cost = 4
+		
+		
+		available_if_capitulated = yes
+		
+	    completion_reward = {
+ 
+	    }
+    }
+
+	focus = {
+		id = EST_carry_out_monetary_reform124
+		icon = GFX_goal_red_star_gold_wreath
+		prerequisite = { focus = EST_konstantin_pats_victory }
+		x = 1
+		y = 5
+		relative_position_id = EST_postwar_estonia
+		cost = 4
+		
+		
+		available_if_capitulated = yes
+		
+	    completion_reward = {
+ 
+	    }
+    }
+
+	focus = {
+		id = EST_jaan_tonison_victory
+		icon = GFX_goal_red_star_gold_wreath
+		prerequisite = { focus = EST_holding_elections }
+		mutually_exclusive = { focus = EST_konstantin_pats_victory }
+		mutually_exclusive = { focus = EST_break_elections }
+		x = -5
+		y = 4
+		relative_position_id = EST_postwar_estonia
+		cost = 4
+		
+		
+		available_if_capitulated = yes
+		
+	    completion_reward = {
+ 
+	    }
+    }
+
+	focus = {
+		id = EST_break_elections
+		icon = GFX_goal_red_star_gold_wreath
+		prerequisite = { focus = EST_holding_elections }
+		mutually_exclusive = { focus = EST_konstantin_pats_victory }
+		mutually_exclusive = { focus = EST_jaan_tonison_victory }
+		x = 6
+		y = 4
+		relative_position_id = EST_postwar_estonia
+		cost = 4
+		
+		
+		available_if_capitulated = yes
+		
+	    completion_reward = {
+ 
+	    }
+    }
+
+	focus = {
+		id = EST_support_commuinst_revolution
+		icon = GFX_goal_red_star_gold_wreath
+		prerequisite = { focus = EST_break_elections }
+		mutually_exclusive = { focus = EST_stage_a_coup }
+		x = 8
+		y = 5
+		relative_position_id = EST_postwar_estonia
+		cost = 4
+		
+		
+		available_if_capitulated = yes
+		
+	    completion_reward = {
+ 
+	    }
+    } 
+
+	focus = {
+		id = EST_stage_a_coup
+		icon = GFX_goal_red_star_gold_wreath
+		prerequisite = { focus = EST_break_elections }
+		mutually_exclusive = { focus = EST_support_commuinst_revolution }
+		x = 4
+		y = 5
+		relative_position_id = EST_postwar_estonia
+		cost = 4
+		
+		
+		available_if_capitulated = yes
+		
+	    completion_reward = {
+ 
+	    }
+    }
+
+	focus = {
+		id = EST_vapsid_government
+		icon = GFX_goal_red_star_gold_wreath
+		prerequisite = { focus = EST_stage_a_coup }
+		x = 4
+		y = 6
+		relative_position_id = EST_postwar_estonia
+		cost = 4
+		
+		
+		available_if_capitulated = yes
+		
+	    completion_reward = {
+ 
+	    }
+    }
+
+	focus = {
+		id = EST_estonian_economy
+		icon = GFX_goal_red_star_gold_wreath
+		x = 43
+		y = 0
+		cost = 4
+		
+		
+		available_if_capitulated = yes
+		
+	    completion_reward = {
+ 
+	    }
+    }
+
+	focus = {
+		id = EST_modernize_economy
+		icon = GFX_goal_red_star_gold_wreath
+		prerequisite = { focus = EST_estonian_economy }
+		x = 0
+		y = 1
+		relative_position_id = EST_estonian_economy
+		cost = 4
+		
+		
+		available_if_capitulated = yes
+		
+	    completion_reward = {
+ 
+	    }
+    }
+
+	focus = {
+		id = EST_carry_out_monetary_reform
+		icon = GFX_goal_red_star_gold_wreath
+		prerequisite = { focus = EST_modernize_economy }
+		x = -1
+		y = 2
+		relative_position_id = EST_estonian_economy
+		cost = 4
+		
+		
+		available_if_capitulated = yes
+		
+	    completion_reward = {
+ 
+	    }
+    }
+
+	focus = {
+		id = EST_create_constituion
+		icon = GFX_goal_red_star_gold_wreath
+		prerequisite = { focus = EST_konstantin_pats_victory }
+		x = -1
+		y = 5
+		relative_position_id = EST_postwar_estonia
+		cost = 4
+		
+		
+		available_if_capitulated = yes
+		
+	    completion_reward = {
+ 
+	    }
+    }
+
+	focus = {
+		id = EST_fight_with_fascists
+		icon = GFX_goal_red_star_gold_wreath
+		prerequisite = { focus = EST_konstantin_pats_victory }
+		x = -1
+		y = 6
+		relative_position_id = EST_postwar_estonia
+		cost = 4
+		
+		
+		available_if_capitulated = yes
+		
+	    completion_reward = {
+ 
+	    }
+    }
+
+	focus = {
+		id = EST_modernization_of_tallinn
+		icon = GFX_goal_red_star_gold_wreath
+		prerequisite = { focus = EST_estonian_economy }
+		x = 4
+		y = 1
+		relative_position_id = EST_estonian_economy
+		cost = 4
+		
+		
+		available_if_capitulated = yes
+		
+	    completion_reward = {
+ 
+	    }
+    }
+
+
+}

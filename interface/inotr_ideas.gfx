@@ -1,0 +1,42 @@
+spriteTypes = {	
+	spriteType = {
+		name = "GFX_idea_BRA_Legacy_of_the_1930_Revolution"
+		texturefile = "gfx/interface/ideas/BRA_Legacy_of_the_1930_Revolution.png"
+	}
+	spriteType = {
+		name = "GFX_idea_BRA_Agrarian_Economy"
+		texturefile = "gfx/interface/ideas/BRA_Agrarian_Economy.png"
+	}
+	spriteType = {
+		name = "GFX_idea_BRA_Political_Violence"
+		texturefile = "gfx/interface/ideas/BRA_Political_Violence.png"
+	}
+	spriteType = {
+		name = "GFX_idea_BRA_Recovering_from_the_Civil_War"
+		texturefile = "gfx/interface/ideas/BRA_Recovering_from_the_Civil_War.png"
+	}
+	spriteType = {
+		name = "GFX_idea_BRA_Influence_of_the_Coffee_Elites"
+		texturefile = "gfx/interface/ideas/BRA_Influence_of_the_Coffee_Elites.png"
+	}
+	spriteType = {
+		name = "GFX_idea_AFG_graveyardofempires"
+		texturefile = "gfx/interface/ideas/AFG_graveyardofempires.png"
+	}
+	spriteType = {
+		name = "GFX_idea_CRO_frozen_war"
+		texturefile = "gfx/interface/ideas/CRO/CRO_frozen_war.png"
+	}
+	spriteType = {
+		name = "GFX_idea_SER_frozen_war"
+		texturefile = "gfx/interface/ideas/SER/SER_frozen_war.png"
+	}
+	spriteType = {
+		name = "GFX_idea_MNT_buffer_state"
+		texturefile = "gfx/interface/ideas/MNT/MNT_buffer_state.png"
+	}
+	spriteType = {
+		name = "GFX_ideology_clerical_fascism"
+		texturefile = "gfx/interface/ideologies/subideologies/clerical_fascism.png"
+	}
+}

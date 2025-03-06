@@ -1,0 +1,8 @@
+﻿l_russian:
+ tooltip_event_allows_choice: "§LСобытие позволяет выбрать одно из следующих:§!"
+ tooltip_event_choice_or: "§L\n-------------- ИЛИ --------------\n§!"
+ tooltip_event_choice_option_1: "§L\n-------------- ВАРИАНТ 1 --------------\n§!"
+ tooltip_event_choice_option_2: "§L\n-------------- ВАРИАНТ 2 --------------\n§!"
+ tooltip_event_choice_option_3: "§L\n-------------- ВАРИАНТ 3 --------------\n§!"
+ tooltip_event_choice_option_4: "§L\n-------------- ВАРИАНТ 4 --------------\n§!"
+ which_has_the_following_effect: "Который оказывает следующее действие:"

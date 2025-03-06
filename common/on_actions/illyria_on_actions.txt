@@ -1,0 +1,63 @@
+on_actions = {
+	# Elections
+	on_new_term_election = {
+		random_events = {
+			100 = CRO.1
+			
+		}
+		
+	}
+	
+
+	
+
+	
+	
+	
+	
+	on_startup = {
+	
+	
+	effect = {
+            every_country = {
+				}
+				CRO={country_event = {id = CRO.2 days = 215}}
+				CRO={country_event = {id = CRO.3 days = 300}}
+				}
+	
+		
+				
+			}
+			on_war = {
+				effect = {
+					if = {
+						limit = {
+							OR = {
+					CRO = {
+						has_war_with = SER
+					}
+					SER = {
+						has_war_with = CRO
+					}
+					
+				}
+				}
+				SER = {
+				remove_ideas = SER_frozen_war
+				}
+				MNT = {
+					remove_ideas = MNT_buffer_state
+					}
+				CRO = {
+					remove_ideas = CRO_frozen_war
+					}
+			}
+				}
+			}
+			}
+			
+		
+	
+	
+	
+	

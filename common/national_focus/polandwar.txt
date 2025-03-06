@@ -1,0 +1,90 @@
+#this tree should be loaded at idependence war
+
+#todo add filters
+
+focus_tree = {
+	id = polandwar
+	
+	default = no
+	reset_on_civilwar = no
+	
+	continuous_focus_position = { x = 50 y = 1500 }
+
+	focus = {
+		id = POL_fortyfourb
+		icon = GFX_goal_revolution
+		x = 7
+		y = 1
+		cost = 1
+
+		ai_will_do = {
+			factor = 10
+		}
+		completion_reward = {
+			swap_ideas = {
+				remove_idea = POL_spirit_of_freedom1
+				add_idea = POL_spirit_of_freedom2
+			}
+		}
+	}
+	focus = {
+		id = POL_recruitment
+		icon = GFX_goal_conscription
+		x = 6
+		y = 2
+		cost = 2
+
+		ai_will_do = {
+			factor = 10
+		}
+		prerequisite = {
+			focus = POL_fortyfourb
+		}
+		modifier = {
+			factor = 1
+
+		}
+		completion_reward = {
+			add_manpower = 30000
+			add_politcal_power = 50
+		}
+	}
+	focus = {
+		id = POL_call_for_help
+		icon = GFX_focus_generic_military_equipment
+		x = 8
+		y = 2
+		cost = 1
+
+		ai_will_do = {
+			factor = 60
+		}
+		prerequisite = {
+			focus = POL_fortyfourb
+		}
+		completion_reward = {
+			country_event = pol.4
+		}
+	}
+	focus = {
+		id = POL_desperate_defense
+		icon = GFX_goal_skull_fortification
+		x = 7
+		y = 3
+		cost = 2
+
+		ai_will_do = {
+			factor = 50
+		}
+		prerequisite = {
+			focus = POL_call_for_help
+			focus = POL_recruitment
+		}
+		completion_reward = {
+			swap_ideas = {
+				remove_idea = POL_spirit_of_freedom2
+				add_idea = POL_spirit_of_freedom3
+			}
+		}
+	}
+}
