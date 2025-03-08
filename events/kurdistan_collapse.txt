@@ -1,0 +1,149 @@
+add_namespace = kurdistan_collapse
+
+# kurdistan collapses
+country_event = {
+	id = kurdistan_collapse.1
+	title = kurdistan_collapse.1.t
+	desc = kurdistan_collapse.1.d
+	picture = GFX_OTT_Arab_Protest
+
+    fire_only_once = yes
+	
+	is_triggered_only = yes
+
+	option = { 
+		name = kurdistan_collapse.1.a
+        RUS = { end_puppet = KUR }
+        KUR = { leave_faction = yes }
+        TRM = {
+            transfer_state = 943
+            load_oob = TRM_1936
+        }
+        PSM = {
+            transfer_state = 676
+            load_oob = PSM_1936
+        }
+        PER = { 
+        transfer_state = 941
+        add_state_core = 941
+     }
+     TRM = {
+     declare_war_on = {
+        target = PSM
+        type = annex_everything
+    }
+}
+	}
+    option = { 
+		name = kurdistan_collapse.1.b
+        RUS = { end_puppet = KUR }
+        KUR = { leave_faction = yes }
+        TRM = {
+            transfer_state = 943
+            load_oob = TRM_1936
+        }
+        PSM = {
+            transfer_state = 676
+            load_oob = PSM_1936
+        }
+        PER = { 
+        transfer_state = 941
+        add_state_core = 941
+     }
+     TRM = {
+     declare_war_on = {
+        target = PSM
+        type = annex_everything
+    }
+}
+PSM = { change_tag_from = KUR }
+	}
+    option = { 
+		name = kurdistan_collapse.1.c
+        RUS = { end_puppet = KUR }
+        KUR = { leave_faction = yes }
+        TRM = {
+            transfer_state = 943
+            load_oob = TRM_1936
+        }
+        PSM = {
+            transfer_state = 676
+            load_oob = PSM_1936
+        }
+        PER = { 
+        transfer_state = 941
+        add_state_core = 941
+     }
+     TRM = {
+     declare_war_on = {
+        target = PSM
+        type = annex_everything
+    }
+}
+TRM = { change_tag_from = KUR }
+	}
+}
+#Barzanji escapes from Turkish Kurdistan to Iraqi Kurdistan
+country_event = {
+	id = kurdistan_collapse.2
+	title = kurdistan_collapse.2.t
+	desc = kurdistan_collapse.2.d
+	picture = GFX_report_event_ARG_car9
+
+    fire_only_once = yes
+	
+	is_triggered_only = yes
+
+	option = { 
+		name = kurdistan_collapse.2.a
+    KUR = { retire_country_leader = yes }
+    PSM = { retire_country_leader = yes }
+    PSM = {
+    create_country_leader = {
+        name = "Sheikh Mahmud Barzanji"
+        desc = "POLITICS_SHEIKH_BARZANJI_DESC"
+       	picture = "gfx/leaders/PSM/portrait_kur_Barazanji.dds"
+        expire = "1965.1.1"
+        ideology = despotism
+        traits = {
+        }
+    }
+}
+KUR = {
+    create_country_leader = {
+        name = "Military Junta"
+        desc = "POLITICS_kurdish_miltiary_junta_DESC"
+       	picture = "gfx/leaders/KUR/portrait_KUR_military_junta.png"
+        expire = "1965.1.1"
+        ideology = despotism
+        traits = {
+        }
+    }
+}
+	}
+}
+#Turkish Kurdistan civil war
+country_event = {
+	id = kurdistan_collapse.3
+	title = kurdistan_collapse.3.t
+	desc = kurdistan_collapse.3.d
+	picture = GFX_report_event_Chile_protest
+
+    fire_only_once = yes
+	
+	is_triggered_only = yes
+
+	option = { 
+		name = kurdistan_collapse.3.a
+        start_civil_war = {
+            ruling_party = communism
+            ideology = ROOT
+            size = 0.8
+            only_own_territory = no
+            capital = 7530
+            states = { 
+                352
+            }
+        }
+	}
+}

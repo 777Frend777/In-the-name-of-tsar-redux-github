@@ -39,4 +39,12 @@ spriteTypes = {
 		name = "GFX_ideology_clerical_fascism"
 		texturefile = "gfx/interface/ideologies/subideologies/clerical_fascism.png"
 	}
+	spriteType = {
+		name = "GFX_idea_TRM_turkmeneli_army"
+		texturefile = "gfx/interface/ideas/TRM_turkmeneli_army.png"
+	}
+	spriteType = {
+		name = "GFX_idea_TRM_caved_to_iraq"
+		texturefile = "gfx/interface/ideas/TRM_caved_to_iraq.png"
+	}
 }
