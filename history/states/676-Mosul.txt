@@ -19,6 +19,8 @@ state={
 			3916 3 
 		}
 		add_core_of = KUR
+		add_core_of = PSM
+		add_core_of = TRM
 	}
 	
 	provinces={

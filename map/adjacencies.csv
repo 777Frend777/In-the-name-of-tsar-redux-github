@@ -207,9 +207,130 @@ From;To;Type;Through;start_x;start_y;stop_x;stop_y;adjacency_rule_name;Comment
 6691;6687;impassable;-1;-1;-1;-1;-1;;austrian alps
 6691;9650;impassable;-1;-1;-1;-1;-1;;austrian alps
 9650;3684;impassable;-1;-1;-1;-1;-1;;austrian alps
-3314;6336;sea;2752;2885;1578;2890;1581;;Afsluitdijk
 13058;10245;impassable;-1;-1;-1;-1;-1;;Greenland Glacier
 13058;12512;impassable;-1;-1;-1;-1;-1;;Greenland Glacier
 13058;10636;impassable;-1;-1;-1;-1;-1;;Greenland Glacier
 13058;13066;impassable;-1;-1;-1;-1;-1;;Greenland Glacier
+
+2510;5295;;-1;-1;-1;-1;-1;TARTARY_STRAIT;EOE new strait
+2583;4465;;-1;-1;-1;-1;-1;SOYA_STRAIT;EOE new strait
+4465;5922;;-1;-1;-1;-1;-1;KURIL_ISLANDS;EOE new strait
+4465;5640;;-1;-1;-1;-1;-1;KURIL_ISLANDS;EOE new strait
+6824;5946;;-1;-1;-1;-1;-1;TSUGARU_STRAIT;EOE new strait
+7932;2708;;-1;-1;-1;-1;-1;KOREA_STRAIT;EOE new strait
+8791;2612;;-1;-1;-1;-1;-1;STRAIT_OF_BEPPU;EOE new strait
+2612;7932;;-1;-1;-1;-1;-1;KANMON_STRAIT;EOE new strait
+8791;5690;;-1;-1;-1;-1;-1;WAKAYAMA_BAY;EOE new strait
+2612;5690;;-1;-1;-1;-1;-1;HIROSHIMA_BAY-OSAKA_BAY;EOE new strait
+5664;5768;;-1;-1;-1;-1;-1;ISE_BAY;EOE new strait
+5664;2637;;-1;-1;-1;-1;-1;TOKYO_BAY;EOE new strait
+2708;8499;;-1;-1;-1;-1;-1;ARIAKA_SEA;EOE new strait
+8150;8472;;-1;-1;-1;-1;-1;OSUMI_STRAIT;EOE new strait
+8292;8472;;-1;-1;-1;-1;-1;OSUMI_STRAIT;EOE new strait
+8343;8472;;-1;-1;-1;-1;-1;AMAMI_STRAIT;EOE new strait
+8343;8525;;-1;-1;-1;-1;-1;OKINAWA_STRAIT;EOE new strait
+8343;2829;;-1;-1;-1;-1;-1;MIYAKOJIMA_STRAIT;EOE new strait
+
+8445;2734;;-1;-1;-1;-1;-1;BOHAI_STRAIT;EOE new strait
+2804;8318;;-1;-1;-1;-1;-1;SHANGHAI_BAY;EOE new strait
+5322;5345;;-1;-1;-1;-1;-1;TAIWAN_STRAIT;EOE new strait
+5322;8371;;-1;-1;-1;-1;-1;TAIWAN_STRAIT;EOE new strait
+5269;5244;;-1;-1;-1;-1;-1;QIONGZHOU_STRAIT;EOE new strait
+
+8676;8623;;-1;-1;-1;-1;-1;BASHI_STRAIT;EOE new strait
+8676;8595;;-1;-1;-1;-1;-1;BASHI_STRAIT;EOE new strait
+5463;8701;;-1;-1;-1;-1;-1;MANILA_BAY;EOE new strait
+2971;8727;;-1;-1;-1;-1;-1;MINDORO_STRAIT;EOE new strait
+2971;2876;;-1;-1;-1;-1;-1;MINDORO_STRAIT;EOE new strait
+2946;8774;;-1;-1;-1;-1;-1;BANGGI_ISLAND;EOE new strait
+2857;8774;;-1;-1;-1;-1;-1;BANGGI_ISLAND;EOE new strait
+8774;8797;;-1;-1;-1;-1;-1;SULU_STRAIT;EOE new strait
+8774;8848;;-1;-1;-1;-1;-1;SULU_STRAIT;EOE new strait
+2899;8848;;-1;-1;-1;-1;-1;SULU_STRAIT;EOE new strait
+2899;2922;;-1;-1;-1;-1;-1;SULU_STRAIT;EOE new strait
+2856;2876;;-1;-1;-1;-1;-1;SAN_BERNARDINO_STRAIT;EOE new strait
+2856;8751;;-1;-1;-1;-1;-1;SURIGAO_STRAIT;EOE new strait
+
+5539;5960;;-1;-1;-1;-1;-1;STRAITS_OF_MALACCA;EOE new strait
+2714;4225;;-1;-1;-1;-1;-1;SUNDA_STRAIT;EOE new strait
+2239;2440;;-1;-1;-1;-1;-1;BANYUWANGI;EOE new strait
+2239;2265;;-1;-1;-1;-1;-1;WEST_NUSA_TENGGARA;EOE new strait
+2124;2291;;-1;-1;-1;-1;-1;KOMODO;EOE new strait
+5414;4676;;-1;-1;-1;-1;-1;OMBAI_STRAIT;EOE new strait
+5414;5438;;-1;-1;-1;-1;-1;WETAR_STRAIT;EOE new strait
+2833;8822;;-1;-1;-1;-1;-1;MAKASSAR_STRAIT;EOE new strait
+2833;4451;;-1;-1;-1;-1;-1;MAKASSAR_STRAIT;EOE new strait
+
+8282;8308;;-1;-1;-1;-1;-1;KERCH_STRAIT;EOE new strait
+2556;5808;;-1;-1;-1;-1;-1;BERING_STRAIT;EOE new strait
+2556;5860;;-1;-1;-1;-1;-1;BERING_STRAIT;EOE new strait
+2556;8713;;-1;-1;-1;-1;-1;BERING_STRAIT;EOE new strait
+2556;8636;;-1;-1;-1;-1;-1;BERING_STRAIT;EOE new strait
+2679;5687;;-1;-1;-1;-1;-1;WHITE_SEA;EOE new strait
+1885;2107;;-1;-1;-1;-1;-1;IRBE_STRAIT;EOE new strait
+1885;1660;;-1;-1;-1;-1;-1;SUUR_STRAIT;EOE new strait
+
+
+5388;8766;;-1;-1;-1;-1;-1;GULF_OF_AQABA;EOE new strait
+2776;2800;;-1;-1;-1;-1;-1;MANDAB_STRAIT;EOE new strait
+8691;2456;;-1;-1;-1;-1;-1;MOZAMBIQUE_CHANNEL;EOE new strait
+7479;7933;;-1;-1;-1;-1;-1;PALK_STRAIT;EOE new strait
+
+6805;7910;;-1;-1;-1;-1;-1;FLORIDA_STRAIT;EOE new strait
+6805;7006;;-1;-1;-1;-1;-1;FLORIDA_STRAIT;EOE new strait
+5840;5892;;-1;-1;-1;-1;-1;YUCATAN_CHANNEL;EOE new strait
+5840;5866;;-1;-1;-1;-1;-1;YUCATAN_CHANNEL;EOE new strait
+5735;5866;;-1;-1;-1;-1;-1;YUCATAN_CHANNEL;EOE new strait
+5430;5406;;-1;-1;-1;-1;-1;GOLDEN_GATE;EOE new strait
+5282;5257;;-1;-1;-1;-1;-1;SALISH_STRAIT;EOE new strait #
+5282;5257;;-1;-1;-1;-1;-1;DELAWARE_BAY;EOE new strait #
+8492;8438;;-1;-1;-1;-1;-1;NORFOLK_STRAIT;EOE new strait #
+
+
+8642;2434;;-1;-1;-1;-1;-1;SAINT_LAWERENCE_STRAIT;EOE new strait
+8614;2434;;-1;-1;-1;-1;-1;SAINT_LAWERENCE_STRAIT;EOE new strait
+2768;2361;;-1;-1;-1;-1;-1;CABOT_STRAIT;EOE new strait
+2768;8589;;-1;-1;-1;-1;-1;CABOT_STRAIT;EOE new strait
+8668;2935;;-1;-1;-1;-1;-1;BELLE_STRAIT;EOE new strait
+
+7230;5658;;-1;-1;-1;-1;-1;JAMAICA_CHANNEL;EOE new strait
+5581;5557;;-1;-1;-1;-1;-1;MONA_PASSAGE;EOE new strait
+
+5864;5838;;-1;-1;-1;-1;-1;OTRANTO_STRAIT;EOE new strait
+5579;5656;;-1;-1;-1;-1;-1;CORSICA_STRAIT;EOE new strait
+5681;5707;;-1;-1;-1;-1;-1;MESSINA_STRAIT;EOE new strait
+225;6801;;-1;-1;-1;-1;-1;ANTIKYTHIRON_STRAIT;EOE new strait
+7226;7002;;-1;-1;-1;-1;-1;KARPATHOU_STRAIT;EOE new strait
+7226;428;;-1;-1;-1;-1;-1;KARPATHOU_STRAIT;EOE new strait
+
+
+5563;5364;;-1;-1;-1;-1;-1;TORRES_STRAIT;EOE new strait
+5563;5613;;-1;-1;-1;-1;-1;TORRES_STRAIT;EOE new strait
+5240;5112;;-1;-1;-1;-1;-1;BASS_STRAIT;EOE new strait
+5637;5386;;-1;-1;-1;-1;-1;COOK_STRAIT;EOE new strait
+8866;2777;;-1;-1;-1;-1;-1;DRAKE_PASSAGE;EOE new strait
+
+2824;8450;;-1;-1;-1;-1;-1;ENGLISH_CHANNEL;EOE new strait
+5929;8450;;-1;-1;-1;-1;-1;ENGLISH_CHANNEL;EOE new strait
+8621;8450;;-1;-1;-1;-1;-1;ENGLISH_CHANNEL;EOE new strait
+8621;12389;;-1;-1;-1;-1;-1;ENGLISH_CHANNEL;EOE new strait
+2824;11748;;-1;-1;-1;-1;-1;THAMES;EOE new strait
+2977;2895;;-1;-1;-1;-1;-1;PORTHMOUTH;EOE new strait
+8314;8462;;-1;-1;-1;-1;-1;SEVERN_RIVER;EOE new strait
+3590;8340;;-1;-1;-1;-1;-1;NORTHERN_IRISH_SEA;EOE new strait
+3990;4212;;-1;-1;-1;-1;-1;ST_GEORGES_CHANNEL;EOE new strait
+3990;8314;;-1;-1;-1;-1;-1;ST_GEORGES_CHANNEL;EOE new strait
+8288;3195;;-1;-1;-1;-1;-1;LOCH_NESS;EOE new strait
+
+8569;5108;;-1;-1;-1;-1;-1;GIRONDE_RIVER;EOE new strait
+8621;13004;;-1;-1;-1;-1;-1;MIDDELBURG;EOE new strait
+2729;7018;;-1;-1;-1;-1;-1;ELBE;EOE new strait
+2333;2358;;-1;-1;-1;-1;-1;STETTINER_HAFF;EOE new strait
+
+2258;2232;;-1;-1;-1;-1;-1;GOLF_OF_VENEZUELA;EOE new strait
+2571;2232;;-1;-1;-1;-1;-1;GOLF_OF_VENEZUELA;EOE new strait
+
+5951;9037;;-1;-1;-1;-1;-1;URUGUAY_RIVER;EOE new strait
+3314;6336;sea;2752;-1;-1;-1;-1;;Afsluitdijk #FIXED
+
 -1;-1;;-1;-1;-1;-1;-1;-1

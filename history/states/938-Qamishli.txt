@@ -15,6 +15,7 @@ state={
 		}
 		add_core_of = SYR
 		add_core_of = KUR
+		add_core_of = PSM
 	}
 
 

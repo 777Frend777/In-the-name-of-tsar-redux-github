@@ -1133,3 +1133,11 @@ l_english:
 #Vatican
  VAT_neutrality_party:0 "HSP"
  VAT_neutrality_party_long:0 "Holy See Party"
+
+#Turmkmeneli
+ TRM_neutrality_party:0 "TPIU"
+ TRM_neutrality_party_long:0 " Turkmeneli Party of Iraqi Unity"
+
+#Peshmerga
+ PSM_neutrality_party:0 "KNLP"
+ PSM_neutrality_party_long:0 "Kurdistan National Liberation Party"
