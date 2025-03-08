@@ -98,7 +98,12 @@ set_popularities = {
 
 set_convoys = 70
 
-
+add_ideas = {
+	UUU_anzac_spirit
+	UUU_australasian_economic_community
+	UUU_commonwealth_ties
+	UUU_dominion_of_the_seas
+}
 
 ### VARIANTS ###
 # 1936 Start #
