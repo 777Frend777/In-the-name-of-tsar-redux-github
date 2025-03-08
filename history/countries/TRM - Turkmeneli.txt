@@ -20,6 +20,8 @@ set_technology = {
 		limited_conscription
 		export_focus
 		civilian_economy
+		TRM_caved_to_iraq
+		TRM_turkmeneli_army
 	}
 }
 

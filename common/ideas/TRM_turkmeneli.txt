@@ -1,0 +1,62 @@
+ideas = {
+	country = {
+		TRM_caved_to_iraq = {
+			picture = GFX_idea_cave_to_iraq
+			allowed = {
+				original_tag = TRM
+			}
+			modifier = {
+				legitimacy_daily = -1
+			}
+			targeted_modifier = {
+				tag = IRQ
+				extra_trade_to_target_factor = 0.1
+				cic_to_target_factor = 0.1
+				mic_to_target_factor = 0.1
+				targeted_legitimacy_daily = 0.1
+				attack_bonus_against = 0.1
+			}
+			cancel = {
+				NOT = { has_war_with = PSM }
+			}
+			on_remove = {
+				IRQ = {
+				annex_country = {
+				target = TRM
+				transfer_troops = yes
+				}
+				}
+				every_state = {
+					limit = {
+					is_core_of = TRM
+					}
+					add_core_of = IRQ
+					}
+				}
+		}
+		TRM_turkmeneli_army = { 
+			
+			allowed = {
+				original_tag = TRM
+			}
+		
+			picture = GFX_idea_turkmeneli_army
+				
+			removal_cost = -1
+
+			cancel = {
+				NOT = { country_exists = IRQ }
+			}
+				
+			modifier = {
+			training_time_factor = 1.0
+			experience_gain_army = -0.15
+			army_core_attack_factor = 0.05
+			army_core_defence_factor = 0.1
+			stability_factor = -0.05
+			war_support_factor = -0.1
+			conscription = -0.05
+			}
+		}
+	}
+}
