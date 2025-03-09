@@ -269,6 +269,18 @@ POL_RUS={
 	color = rgb { 80 160 80 }
     color_ui = rgb { 80 160 80 }
 }
+EST_RUS={
+	color = rgb { 80 160 80 }
+    color_ui = rgb { 80 160 80 }
+}
+LAT_RUS={
+	color = rgb { 80 160 80 }
+    color_ui = rgb { 80 160 80 }
+}
+KUL_RUS={
+	color = rgb { 80 160 80 }
+    color_ui = rgb { 80 160 80 }
+}
 RUS_Puppet={
 	color = rgb { 80 160 80 }
     color_ui = rgb { 80 160 80 }

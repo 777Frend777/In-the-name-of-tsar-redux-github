@@ -488,10 +488,11 @@ add_ideas = RUS_general_staff
 		y = 4
         completion_reward = {
 			SIB = {
-		add_ideas = SIB_partizansakaya_voina 
+		        add_ideas = SIB_partizansakaya_voina 
 			}
+	    }
 	}
-	}
+
 	focus = {
 		id = SIB_naiti_artilleriu
 		icon = GFX_vse_v_bochky
@@ -520,10 +521,11 @@ add_ideas = RUS_general_staff
 					owner = ROOT
 				}
 			}
-}
+        }
 	}
+
 	focus = {
-		id = SIB_go_exile_in_serbia
+	    id = SIB_go_exile_in_serbia
 		icon = GFX_goal_PAL_Russian_Refugees
 		cost = 3,00
 		prerequisite = {
@@ -531,17 +533,18 @@ add_ideas = RUS_general_staff
 		}
 		x = 3
 		y = 5
-available = {
-SIB = {
-surrender_progress > 0.5
-}
-}
-        completion_reward = {
-SIB = {
-become_exiled_in = { target = SER legitimacy = 30 }
-}
-}
+        available = {
+            SIB = {
+                surrender_progress > 0.5
             }
+        }
+        completion_reward = {
+            SIB = {
+                become_exiled_in = { target = SER legitimacy = 30 }
+            }
+        }
+    }
+
 	focus = {
 		id = SIB_crush_railways
 		icon = GFX_crush_factories

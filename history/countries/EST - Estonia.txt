@@ -15,6 +15,8 @@ IF = {
 	}
 }
 
+set_cosmetic_tag = EST_RUS
+
 recruit_character = EST_konstantin_pats
 recruit_character = EST_artur_sirk
 recruit_character = EST_johannes_kabin

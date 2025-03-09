@@ -236,6 +236,9 @@ add_to_faction = MON
 add_to_faction = KRW
 add_to_faction = ROM
 add_to_faction = POL
+add_to_faction = EST
+add_to_faction = LAT
+add_to_faction = KUL
 add_to_faction = RMN
 add_to_faction = BUK
 add_to_faction = KHI
@@ -268,6 +271,18 @@ if = {
 		autonomous_state = autonomy_puppet
 	}
 	set_autonomy = {
+		target = EST
+		autonomous_state = autonomy_puppet
+	}
+	set_autonomy = {
+		target = LAT
+		autonomous_state = autonomy_puppet
+	}
+	set_autonomy = {
+		target = KUL
+		autonomous_state = autonomy_puppet
+	}
+	set_autonomy = {
 		target = BUK
 		autonomous_state = autonomy_puppet
 	}	
@@ -283,6 +298,9 @@ if = {
 		puppet = KHI
 		puppet = BUK
 		puppet = POL
+		puppet = EST
+		puppet = LAT
+		puppet = KUL
 		puppet = RMN
 		puppet = KUR
 		puppet = KRW

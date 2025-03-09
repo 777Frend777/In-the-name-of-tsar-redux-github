@@ -306,6 +306,40 @@
     }
 
 	focus = {
+		id = EST_no_step_back
+		icon = GFX_goal_red_star_gold_wreath
+		prerequisite = { focus = EST_second_russo_estonian_war }
+		x = 1
+		y = 1
+		relative_position_id = EST_second_russo_estonian_war
+		cost = 0.1
+		
+		
+		available_if_capitulated = yes
+		
+	    completion_reward = {
+		    army_experience = 25
+	    }
+    }
+
+	focus = {
+		id = EST_evacuate
+		icon = GFX_goal_red_star_gold_wreath
+		prerequisite = { focus = EST_second_russo_estonian_war }
+		x = -1
+		y = 1
+		relative_position_id = EST_second_russo_estonian_war
+		cost = 0.1
+		
+		
+		available_if_capitulated = yes
+		
+	    completion_reward = {
+		    army_experience = 25
+	    }
+    }
+
+	focus = {
 		id = EST_postwar_estonia
 		icon = GFX_goal_red_star_gold_wreath
 		x = 28
@@ -413,13 +447,48 @@
     }
 
 	focus = {
-		id = EST_carry_out_monetary_reform124
+		id = EST_fight_with_fascists
 		icon = GFX_goal_red_star_gold_wreath
 		prerequisite = { focus = EST_konstantin_pats_victory }
 		x = 1
 		y = 5
 		relative_position_id = EST_postwar_estonia
 		cost = 4
+		
+		
+		available_if_capitulated = yes
+		
+	    completion_reward = {
+ 
+	    }
+    }
+
+	focus = {
+		id = EST_bypass_rigikogu
+		icon = GFX_goal_red_star_gold_wreath
+		prerequisite = { focus = EST_fight_with_fascists }
+		prerequisite = { focus = EST_create_constituion }
+		x = 0
+		y = 6
+		relative_position_id = EST_postwar_estonia
+		cost = 5
+		
+		
+		available_if_capitulated = yes
+		
+	    completion_reward = {
+ 
+	    }
+    }
+
+	focus = {
+		id = EST_league_of_rigikaitselit
+		icon = GFX_goal_red_star_gold_wreath
+		prerequisite = { focus = EST_bypass_rigikogu }
+		x = 1
+		y = 7
+		relative_position_id = EST_postwar_estonia
+		cost = 5
 		
 		
 		available_if_capitulated = yes
@@ -521,12 +590,29 @@
     }
 
 	focus = {
+		id = EST_young_vapsid
+		icon = GFX_goal_red_star_gold_wreath
+		prerequisite = { focus = EST_vapsid_government }
+		x = 5
+		y = 7
+		relative_position_id = EST_postwar_estonia
+		cost = 4
+		
+		
+		available_if_capitulated = yes
+		
+	    completion_reward = {
+ 
+	    }
+    }
+
+	focus = {
 		id = EST_estonian_economy
 		icon = GFX_goal_red_star_gold_wreath
 		x = 43
 		y = 0
-		cost = 4
-		
+		cost = 8
+
 		
 		available_if_capitulated = yes
 		
@@ -542,7 +628,25 @@
 		x = 0
 		y = 1
 		relative_position_id = EST_estonian_economy
-		cost = 4
+		cost = 8
+		
+		
+		available_if_capitulated = yes
+		
+	    completion_reward = {
+ 
+	    }
+    }
+    
+	focus = {
+		id = EST_investements_to_countryside
+		icon = GFX_goal_red_star_gold_wreath
+		prerequisite = { focus = EST_modernize_economy }
+		prerequisite = { focus = EST_modernization_of_tallinn }
+		x = 3
+		y = 2
+		relative_position_id = EST_estonian_economy
+		cost = 7
 		
 		
 		available_if_capitulated = yes
@@ -559,7 +663,7 @@
 		x = -1
 		y = 2
 		relative_position_id = EST_estonian_economy
-		cost = 4
+		cost = 7
 		
 		
 		available_if_capitulated = yes
@@ -568,6 +672,7 @@
  
 	    }
     }
+	
 
 	focus = {
 		id = EST_create_constituion
@@ -587,30 +692,13 @@
     }
 
 	focus = {
-		id = EST_fight_with_fascists
-		icon = GFX_goal_red_star_gold_wreath
-		prerequisite = { focus = EST_konstantin_pats_victory }
-		x = -1
-		y = 6
-		relative_position_id = EST_postwar_estonia
-		cost = 4
-		
-		
-		available_if_capitulated = yes
-		
-	    completion_reward = {
- 
-	    }
-    }
-
-	focus = {
 		id = EST_modernization_of_tallinn
 		icon = GFX_goal_red_star_gold_wreath
 		prerequisite = { focus = EST_estonian_economy }
-		x = 4
+		x = 5
 		y = 1
 		relative_position_id = EST_estonian_economy
-		cost = 4
+		cost = 7
 		
 		
 		available_if_capitulated = yes
@@ -622,3 +710,4 @@
 
 
 }
+
