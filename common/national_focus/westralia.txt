@@ -1,17 +1,17 @@
 ﻿focus_tree = {
-	id = aust
+	id = waust
 	country = {
 		factor = 0
 		modifier = {
 			add = 10
-			tag = AST
+			tag = WST
 		}
 	}
 	
 	shared_focus = UUU_rejoin_the_railways 
 	
 	focus = {
-		id = AST_?
+		id = WST_?
 		icon = GFX_markov_focus
 		cost = 1
 		x = 3

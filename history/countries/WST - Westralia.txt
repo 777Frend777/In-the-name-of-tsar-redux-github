@@ -75,6 +75,8 @@ if = {
 }
 add_ideas = {
 	WST_disapproval_from_the_crown
+	WST_gold_mining
+	WST_agrarian_society
 	UUU_anzac_spirit
 	UUU_australasian_economic_community
 	UUU_commonwealth_ties
