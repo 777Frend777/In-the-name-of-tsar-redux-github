@@ -1,101 +1,52 @@
 ideas = {
-	country = {
-    UUU_anzac_spirit = {
-        picture = AST_anzac_spirit
-			
-			allowed = {
-				always = no
-			}
-
-			allowed_civil_war = {
-				always = yes
-			}
-
-			removal_cost = -1
-			
-        modifier = {
-            division_organisation_factor = 0.05
-            division_recovery_rate = 0.1
-            war_support_factor = 0.05
+    country = {
+        UUU_anzac_spirit = {
+            picture = AST_anzac_spirit
+            allowed = { always = no }
+            allowed_civil_war = { always = yes }
+            removal_cost = -1
+            modifier = { war_support_factor = 0.05 }
+        }
+        
+        UUU_australasian_economic_community = {
+            picture = economic_control_icon
+            allowed = { always = no }
+            allowed_civil_war = { always = yes }
+            removal_cost = -1
+            modifier = {
+                trade_opinion_factor = 0.2
+                consumer_goods_factor = -0.03
+            }
+        }
+        
+        UUU_commonwealth_ties = {
+            picture = AST_british_ties
+            allowed = { always = no }
+            allowed_civil_war = { always = yes }
+            removal_cost = -1
+            modifier = {
+                political_power_gain = 0.2
+                guarantee_cost = -0.25
+            }
+        }
+        
+        UUU_bush_survivalist_mentality = {
+            picture = army_cooperation
+            allowed = { always = no }
+            allowed_civil_war = { always = yes }
+            removal_cost = -1
+            modifier = { recruitable_population_factor = 0.005 }
+        }
+        
+        UUU_dominion_of_the_seas = {
+            picture = generic_navy_bonus
+            allowed = { always = no }
+            allowed_civil_war = { always = yes }
+            removal_cost = -1
+            modifier = {
+                amphibious_invasion = 0.1
+                naval_invasion_planning_bonus_speed = 0.3
+            }
         }
     }
-
-    UUU_australasian_economic_community = {
-        picture = economic_control_icon
-			
-			allowed = {
-				always = no
-			}
-
-			allowed_civil_war = {
-				always = yes
-			}
-
-			removal_cost = -1
-			
-        modifier = {
-            trade_opinion_factor = 0.2
-            consumer_goods_factor = -0.03
-            resources_factor = 0.1
-        }
-    }
-
-    UUU_commonwealth_ties = {
-        picture = AST_british_ties
-			
-			allowed = {
-				always = no
-			}
-
-			allowed_civil_war = {
-				always = yes
-			}
-
-			removal_cost = -1
-			
-        modifier = {
-            political_power_gain = 0.2
-            guarantee_cost = -0.25
-            opinion_gain_factor = 0.15
-        }
-    }
-
-    UUU_bush_survivalist_mentality = {
-        picture = army_cooperation
-			
-			allowed = {
-				always = no
-			}
-
-			allowed_civil_war = {
-				always = yes
-			}
-
-			removal_cost = -1
-			
-        modifier = {
-            army_attrition = -0.1
-            recruitable_population_factor = 0.005
-        }
-    }
-
-    UUU_dominion_of_the_seas = {
-        picture = generic_navy_bonus
-			
-			allowed = {
-				always = no
-			}
-
-			allowed_civil_war = {
-				always = yes
-			}
-
-			removal_cost = -1
-			
-        modifier = {
-            amphibious_invasion = 0.1
-			naval_invasion_planning_bonus_speed = 0.3
-        }
-    }
-}
 }
