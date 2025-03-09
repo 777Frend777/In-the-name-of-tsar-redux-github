@@ -13857,3 +13857,8 @@
 13856;65;20;14;sea;true;ocean;0
 13857;253;186;132;land;false;urban;1
 13858;235;0;11;land;true;urban;1
+13859;198;57;25;land;false;forest;1
+13860;75;198;112;land;false;plains;1
+13861;198;13;0;land;true;forest;1
+13862;255;182;66;land;false;forest;1
+13863;198;71;156;land;true;forest;1

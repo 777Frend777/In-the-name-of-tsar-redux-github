@@ -27,6 +27,9 @@ LUX = {
 BEL = { color 	 = rgb { 210 190 20  }
 		color_ui = rgb { 210 190 20 }
 	  }
+KUL = { color 	 = rgb { 224 198 69  }
+		color_ui = rgb { 224 198 69 }
+	  }
 HOL = {	color = rgb { 224 143 62 }
 		color_ui = rgb { 224 143 62 }
 }
