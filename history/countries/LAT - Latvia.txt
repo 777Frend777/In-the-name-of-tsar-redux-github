@@ -1,23 +1,12 @@
 ﻿capital = 808
 
 oob = "LAT_1936"
-if = {
-	limit = { has_dlc = "Man the Guns" }
-		set_naval_oob = "LAT_1936_naval_mtg"
-	else = {
-		set_naval_oob = "LAT_1936_naval_legacy"
-	}
-}
+
+set_research_slots = 3
 
 add_ideas = {
 	limited_conscription
-}
-IF = {
-	limit = { has_dlc = "No Step Back" }
-	add_ideas = {
-		LAT_perkonkrust_idea
-		democratic_opposition
-	}
+	BAL_special_baltic_order
 }
 
 set_cosmetic_tag = LAT_RUS
@@ -80,8 +69,6 @@ if = {
 		early_ship_hull_submarine = 1
 	}
 }
-
-set_research_slots = 3
 
 set_convoys = 10
 

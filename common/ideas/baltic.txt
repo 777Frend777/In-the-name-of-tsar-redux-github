@@ -1,0 +1,27 @@
+ideas = {
+	country = {
+		BAL_special_baltic_order = {
+		
+			allowed = {
+				always = no
+			}
+
+			picture = PER_religious_discontent
+
+			allowed_civil_war = {
+				NOT = {
+					has_government = communism
+				}
+			}
+
+			removal_cost = -1
+			
+			modifier = {
+				recruitable_population = 0.025
+				consumer_goods_factor = 0.1
+				stability_factor = -0.25
+				political_power_gain = -0.15
+			}
+		}
+    }
+}
