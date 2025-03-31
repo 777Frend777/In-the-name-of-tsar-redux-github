@@ -2,3 +2,18 @@
  ###IDEAS
  WST_disapproval_from_the_crown: "Неодобрение со стороны Короны"
  WST_disapproval_from_the_crown_desc: "Референдум об отделении Западной Австралии 1933 года был признан Британской короной незаконным, однако после масштабных дебатов и протестов в Перте Британцы разрешили создание Вестралии."
+ 
+ #Party names
+ WST_conservatives_party:0 "Национальная партия (ВА)"
+ WST_conservatives_party_long:0 "Националистическая партия (Вестралийское отделение)"
+
+ WST_democratic_party:0 "Лейбористская партия (ВА)"
+ WST_democratic_party_long:0 "Лейбористская партия (Вестралийское отделение)"
+
+ WST_fascism_party:0 "Золотая гвардия"
+
+ WST_socialist_party:0 "ВНФ"
+ WST_socialist_party_long:0 "Вестралийский народный фронт"
+
+ WST_communism_party:0 "КПВА"
+ WST_communism_party_long:0 "Коммунистическая партия Вестралии"

@@ -1,0 +1,22 @@
+﻿focus_tree = {
+	id = waust
+	country = {
+		factor = 0
+		modifier = {
+			add = 10
+			tag = WST
+		}
+	}
+	
+	shared_focus = UUU_rejoin_the_railways 
+	
+	focus = {
+		id = WST_?
+		icon = GFX_markov_focus
+		cost = 1
+		x = 3
+		y = 0
+		completion_reward = {
+		}
+	}
+}

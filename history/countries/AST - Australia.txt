@@ -172,6 +172,14 @@ set_popularities = {
 
 set_convoys = 100
 
+add_ideas = {
+	UUU_anzac_spirit
+	UUU_australasian_economic_community
+	UUU_commonwealth_ties
+	UUU_bush_survivalist_mentality
+	UUU_dominion_of_the_seas
+}
+
 
 if = {
 	limit = { not = { has_dlc = "Man the Guns" } }

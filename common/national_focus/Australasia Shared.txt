@@ -1,0 +1,2248 @@
+#	shared_focus = {
+#		id = UUU_
+#		icon = GFX_
+#		prerequisite = { focus = }
+#		mutually_exclusive = { focus =  }
+#		x = -3
+#		y = 0
+#		relative_position_id = 
+#
+#		cost = 10
+#
+#		ai_will_do = {
+#			factor = 1
+#		}
+#
+#		available = {
+#
+#		}
+#		
+#		bypass = {
+#
+#		}
+#
+#		cancel_if_invalid = yes
+#		continue_if_invalid = no
+#		available_if_capitulated = no
+#
+#		complete_tooltip = {
+#
+#		}
+#
+#		completion_reward = {
+#
+#		}
+#	}
+### search_filters = {FOCUS_FILTER_POLITICAL}
+### search_filters = {FOCUS_FILTER_RESEARCH}
+### search_filters = {FOCUS_FILTER_INDUSTRY}
+### search_filters = {FOCUS_FILTER_STABILITY}
+### search_filters = {FOCUS_FILTER_WAR_SUPPORT}
+### search_filters = {FOCUS_FILTER_MANPOWER}
+### search_filters = {FOCUS_FILTER_ANNEXATION}
+
+shared_focus = {
+	id = UUU_rejoin_the_railways 
+	icon = GFX_goal_generic_construct_infrastructure
+	x = 10
+	y = 0
+	offset = {
+		x = -6
+		y = 0
+		trigger = {
+			
+		}
+	}
+
+	cost = 5
+
+	ai_will_do = {
+		factor = 1
+	}
+
+	available = {
+
+	}
+
+	bypass = {
+		
+	}
+
+	cancel_if_invalid = yes
+	continue_if_invalid = no
+	available_if_capitulated = no
+
+	search_filters = { FOCUS_FILTER_INDUSTRY }
+	completion_reward = {
+		every_owned_state = {
+			limit = {
+				is_core_of = ROOT
+				free_building_slots = {
+					building = infrastructure
+					size > 1
+				}
+				is_capital = no 
+			}
+			add_building_construction = {
+				type = infrastructure
+				level = 1
+				instant_build = yes
+			}
+		}
+	}
+}
+
+#soyuz investments
+shared_focus = {
+	id = UUU_soyuz_investments
+	icon = GFX_focus_rus_eastern_coalition
+	dynamic = yes
+	prerequisite = { focus = UUU_rejoin_the_railways }
+	mutually_exclusive = { focus = UUU_closer_ties }
+	x = -7
+	y = 1
+	relative_position_id = UUU_rejoin_the_railways
+
+	cost = 10
+
+	ai_will_do = {
+		factor = 1
+	}
+
+	available = {
+		any_other_country = {
+			exists = yes
+			has_capitulated = no
+			has_government = neutrality
+			is_major = yes
+			NOT = { has_war_with = ROOT }
+		}
+	}
+
+	bypass = {
+
+	}
+
+	cancel_if_invalid = yes
+	continue_if_invalid = no
+	available_if_capitulated = no
+
+	search_filters = { FOCUS_FILTER_INDUSTRY FOCUS_FILTER_POLITICAL }
+	completion_reward = {
+		add_ideas = UUU_soyuz_investments_idea
+		add_popularity = {
+			ideology = neutrality
+			popularity = 0.05
+		}
+		if = {
+			limit = {
+				RUS = {
+					exists = yes
+					has_capitulated = no
+					has_government = neutrality
+					is_faction_leader = yes
+					NOT = { has_war_with = ROOT }
+				}
+			}
+			RUS = {
+				add_opinion_modifier = {
+					target = PREV
+					modifier = BALTIC_investments
+				}
+				reverse_add_opinion_modifier = {
+					target = PREV
+					modifier = BALTIC_investments
+				}
+			}
+		}
+		else_if = {
+			limit = { 
+				suitable_fascist_major_in_europe = yes 
+			}
+			random_other_country = {
+				limit = { 
+					is_major = yes
+					capital_scope = { is_on_continent = europe }
+					exists = yes
+					has_capitulated = no
+					has_government = neutrality
+					NOT = { has_war_with = ROOT }
+				}
+				add_opinion_modifier = {
+					target = PREV
+					modifier = BALTIC_investments
+				}
+				reverse_add_opinion_modifier = {
+					target = PREV
+					modifier = BALTIC_investments
+				}
+			}
+		}
+		else_if = {
+			limit = {
+				JAP = {
+					exists = yes
+					has_capitulated = no
+					has_government = neutrality
+					NOT = { has_war_with = ROOT }
+				}
+			}
+			JAP = {
+				add_opinion_modifier = {
+					target = PREV
+					modifier = BALTIC_investments
+				}
+				reverse_add_opinion_modifier = {
+					target = PREV
+					modifier = BALTIC_investments
+				}
+			}
+		}
+		else_if = {
+			limit = {suitable_fascist_major_in_europe = yes }
+			random_other_country = {
+				limit = { 
+					is_major = yes
+					capital_scope = { is_on_continent = europe }
+					exists = yes
+					has_capitulated = no
+					has_government = neutrality
+					NOT = { has_war_with = ROOT }
+				}
+				add_opinion_modifier = {
+					target = PREV
+					modifier = BALTIC_investments
+				}
+				reverse_add_opinion_modifier = {
+					target = PREV
+					modifier = BALTIC_investments
+				}
+			}
+		}
+		else_if = {
+			limit = {
+				any_other_country = {
+					is_faction_leader = yes
+					has_government = neutrality
+				}
+			}
+			get_best_alliance_match_neutrality_effect = yes
+			var:best_leader = {
+				add_opinion_modifier = {
+					target = PREV
+					modifier = BALTIC_investments
+				}
+				reverse_add_opinion_modifier = {
+					target = PREV
+					modifier = BALTIC_investments
+				}
+			}
+		}
+		else_if = {
+			limit = {
+				any_other_country ={
+					is_major = yes
+					has_government = neutrality
+				}
+			}
+			random_other_country = {
+				limit = {
+					is_major = yes 
+					has_government = neutrality 
+				}
+				add_opinion_modifier = {
+					target = PREV
+					modifier = BALTIC_investments
+				}
+				reverse_add_opinion_modifier = {
+					target = PREV
+					modifier = BALTIC_investments
+				}
+
+			}
+		}
+	}
+}
+
+shared_focus = {
+	id = UUU_russian_war_economics
+	icon = GFX_goal_generic_production
+	dynamic = yes
+	prerequisite = { focus = UUU_soyuz_investments }
+	x = -1
+	y = 1
+	relative_position_id = UUU_soyuz_investments
+
+	cost = 10
+
+	ai_will_do = {
+		factor = 1
+	}
+
+	available = {
+		any_other_country = {
+			exists = yes
+			has_capitulated = no
+			has_government = neutrality
+			is_major = yes
+			NOT = { has_war_with = ROOT }
+		}
+	}
+
+	bypass = {
+
+	}
+
+	cancel_if_invalid = yes
+	continue_if_invalid = no
+	available_if_capitulated = no
+
+	search_filters = { FOCUS_FILTER_INDUSTRY }
+	completion_reward = {
+		upgrade_economy_law = yes
+		capital_scope = {
+			add_extra_state_shared_building_slots = 2
+			add_building_construction = {
+				type = arms_factory
+				level = 2
+				instant_build = yes
+			}
+		}
+		random_owned_controlled_state = {
+			limit = {
+				free_building_slots = {
+					building = arms_factory
+					size > 0
+					include_locked = yes
+				}
+				OR = {
+					is_in_home_area = yes
+					NOT = {
+						owner = {
+							any_owned_state = {
+								free_building_slots = {
+									building = arms_factory
+									size > 0
+									include_locked = yes
+								}
+								is_in_home_area = yes
+							}
+						}
+					}
+				}
+			}
+			add_extra_state_shared_building_slots = 1
+			add_building_construction = {
+				type = arms_factory
+				level = 1
+				instant_build = yes
+			}
+		}
+	}
+}
+
+shared_focus = {
+	id = UUU_autobahn
+	icon = GFX_goal_reichsautobahn
+	prerequisite = { focus = UUU_russian_war_economics }
+	prerequisite = { focus = UUU_russian_tank_licences }
+	x = 0
+	y = 1
+	relative_position_id = UUU_russian_war_economics
+
+	cost = 10
+
+	ai_will_do = {
+		factor = 1
+	}
+
+	available = {
+		any_other_country = {
+			exists = yes
+			has_capitulated = no
+			has_government = neutrality
+			is_major = yes
+			NOT = { has_war_with = ROOT }
+		}
+	}
+
+	bypass = {
+
+	}
+
+	cancel_if_invalid = yes
+	continue_if_invalid = no
+	available_if_capitulated = no
+
+	search_filters = { FOCUS_FILTER_INDUSTRY }
+	completion_reward = {
+		capital_scope = {
+			add_extra_state_shared_building_slots = 2
+			add_building_construction = {
+				type = industrial_complex
+				level = 1
+				instant_build = yes
+			}
+		}
+		every_owned_state = {
+			limit = {
+				is_core_of = ROOT
+			}
+			add_building_construction = {
+				type = infrastructure
+				level = 1
+				instant_build = yes
+			}
+			add_extra_state_shared_building_slots = 1
+		}
+		random_owned_controlled_state = {
+			limit = {
+				is_capital = no
+				free_building_slots = {
+					building = industrial_complex
+					size > 0
+					include_locked = yes
+				}
+				OR = {
+					is_in_home_area = yes
+					NOT = {
+						owner = {
+							any_owned_state = {
+								free_building_slots = {
+									building = industrial_complex
+									size > 0
+									include_locked = yes
+								}
+								is_in_home_area = yes
+							}
+						}
+					}
+				}
+			}
+			add_building_construction = {
+				type = industrial_complex
+				level = 1
+				instant_build = yes
+			}
+		}
+	}
+}
+
+shared_focus = {
+	id = UUU_russian_tank_licences
+	icon = GFX_goal_generic_army_tanks
+	dynamic = yes
+	prerequisite = { focus = UUU_soyuz_investments }
+	x = 1
+	y = 1
+	relative_position_id = UUU_soyuz_investments
+
+	cost = 10
+
+	ai_will_do = {
+		factor = 1
+	}
+
+	available = {
+		any_other_country = {
+			exists = yes
+			has_capitulated = no
+			has_government = neutrality
+			is_major = yes
+			NOT = { has_war_with = ROOT }
+		}
+	}
+
+	bypass = {
+
+	}
+
+	cancel_if_invalid = yes
+	continue_if_invalid = no
+	available_if_capitulated = no
+
+	search_filters = { FOCUS_FILTER_INDUSTRY }
+	completion_reward = {
+		if = {
+			limit = {
+				RUS = {
+					exists = yes
+					has_capitulated = no
+					has_government = neutrality
+					is_faction_leader = yes
+					NOT = { has_war_with = ROOT }
+				}
+			}
+			RUS = { 
+				give_fascist_tank_licences = yes
+			}
+			if = {
+				limit = {
+					has_dlc = "Arms Against Tyranny"
+				}
+				add_equipment_subsidy = {
+					cic = 500
+					equipment_type = light_tank_chassis
+					seller_tags  = { RUS }
+				}
+			}
+		}
+		else_if = {
+			limit = {
+				suitable_fascist_major_in_europe = yes
+			}
+			random_other_country = {
+				limit ={
+					is_major = yes
+					capital_scope = { is_on_continent = europe }
+					exists = yes
+					has_capitulated = no
+					has_government = neutrality
+					NOT = { has_war_with = ROOT }
+				}
+				give_fascist_tank_licences = yes
+			}
+			if = {
+				limit = {
+					has_dlc = "Arms Against Tyranny"
+				}
+				add_equipment_subsidy = {
+					cic = 500
+					equipment_type = light_tank_chassis
+					seller_trigger = is_fascist_seller_trigger
+				}
+			}
+		}
+		else_if = { 
+			limit = {
+				JAP = {
+					exists = yes
+					has_capitulated = no
+					has_government = neutrality
+					NOT = { has_war_with = ROOT }
+				}
+			}
+			JAP = {
+				give_fascist_tank_licences = yes
+			}
+			if = {
+				limit = {
+					has_dlc = "Arms Against Tyranny"
+				}
+				add_equipment_subsidy = {
+					cic = 500
+					equipment_type = light_tank_chassis
+					seller_tags  = { JAP }
+				}
+			}
+		}
+		else = {
+			get_best_alliance_match_neutrality_effect = yes
+			var:best_leader = {
+				give_fascist_tank_licences = yes
+			}
+		} 	
+	}
+}
+
+shared_focus = {
+	id = UUU_russian_australasian_industry
+	icon = GFX_goal_generic_production2
+	prerequisite = { focus = UUU_russian_tank_licences }
+	prerequisite = { focus = UUU_russian_war_economics }
+	x = 0
+	y = 1
+	relative_position_id = UUU_russian_tank_licences
+
+	cost = 10
+
+	ai_will_do = {
+		factor = 1
+	}
+
+	available = {
+		any_other_country = {
+			exists = yes
+			has_capitulated = no
+			has_government = neutrality
+			is_major = yes
+			NOT = { has_war_with = ROOT }
+		}
+	}
+
+	bypass = {
+
+	}
+
+	cancel_if_invalid = yes
+	continue_if_invalid = no
+	available_if_capitulated = no
+
+	search_filters = { FOCUS_FILTER_INDUSTRY }
+	completion_reward = {
+		swap_ideas = {
+			remove_idea = UUU_soyuz_investments_idea
+			add_idea = UUU_soyuz_investments_idea_1
+		}
+	}
+}
+
+shared_focus = {
+	id = UUU_request_russian_support
+	dynamic = yes
+	icon = GFX_goal_generic_trade
+	prerequisite = { focus = UUU_russian_australasian_industry }
+	x = 0
+	y = 1
+	relative_position_id = UUU_russian_australasian_industry
+
+	cost = 10
+
+	ai_will_do = {
+		factor = 1
+	}
+
+	available = {
+		any_other_country = {
+			exists = yes
+			has_capitulated = no
+			has_government = neutrality
+			is_faction_leader = yes
+			NOT = { has_war_with = ROOT }
+		}
+	}
+
+	bypass = {
+
+	}
+
+	cancel_if_invalid = yes
+	continue_if_invalid = no
+	available_if_capitulated = no
+
+	completion_reward = {
+		if = {
+			limit = {
+				RUS = {
+					exists = yes
+					has_capitulated = no
+					has_government = neutrality
+					is_faction_leader = yes
+					NOT = { has_war_with = ROOT }
+				}
+			}
+			RUS = { 
+				country_event = {
+					id = UUU_events.1
+					days = 10
+				}			
+			}
+		}
+		else_if = {
+			limit = {
+				suitable_fascist_major_in_europe = yes
+			}
+			random_other_country = {
+				limit ={
+					is_major = yes
+					capital_scope = { is_on_continent = europe }
+					exists = yes
+					has_capitulated = no
+					has_government = neutrality
+					NOT = { has_war_with = ROOT }
+				}
+				country_event = {
+					id = UUU_events.1
+					days = 10
+				}			
+			}
+		}
+		else_if = { 
+			limit = {
+				JAP = {
+					exists = yes
+					has_capitulated = no
+					has_government = neutrality
+					NOT = { has_war_with = ROOT }
+				}
+			}
+			JAP = {
+				country_event = {
+					id = UUU_events.1
+					days = 10
+				}
+			}
+		}
+		else = {
+			get_best_alliance_match_neutrality_effect = yes
+			var:best_leader = {
+				country_event = {
+					id = UUU_events.1
+					days = 10
+				}			
+			}
+		}
+	}
+}
+
+#Allied investments
+shared_focus = {
+	id = UUU_closer_ties
+	icon = GFX_focus_chi_british_cooperation
+	dynamic = yes
+	prerequisite = { focus = UUU_rejoin_the_railways }
+	mutually_exclusive = { focus = UUU_soyuz_investments }
+	x = -3
+	y = 1
+	relative_position_id = UUU_rejoin_the_railways
+
+	cost = 10
+
+	ai_will_do = {
+		factor = 1
+	}
+
+	available = {
+		any_other_country = {
+			exists = yes
+			has_capitulated = no
+			has_government = conservatives
+			is_major = yes
+			NOT = { has_war_with = ROOT }
+		}
+	}
+
+	bypass = {
+
+	}
+
+	cancel_if_invalid = yes
+	continue_if_invalid = no
+	available_if_capitulated = no
+
+	search_filters = { FOCUS_FILTER_INDUSTRY FOCUS_FILTER_POLITICAL }
+	completion_reward = {
+		add_ideas = UUU_allied_investments_idea
+		## Checking for valid Democractic Countries to increase opinion
+		if = { #Checking for UK 
+			limit = {
+				ENG = { 
+					exists = yes
+					has_capitulated = no
+					has_government = conservatives
+					is_faction_leader = yes
+					NOT = { has_war_with = ROOT }
+				}
+			}
+			ENG = {
+				add_opinion_modifier = {
+					target = PREV
+					modifier = BALTIC_investments
+				}
+				reverse_add_opinion_modifier = {
+					target = PREV
+					modifier = BALTIC_investments
+				}
+			}
+		}
+		else_if = { # (Allied) Fallback to France 
+			limit = {
+				FRA = { 
+					exists = yes
+					has_capitulated = no
+					has_government = conservatives
+					is_faction_leader = yes
+					NOT = { has_war_with = ROOT }
+				}
+			}
+			FRA = {
+				add_opinion_modifier = {
+					target = PREV
+					modifier = BALTIC_investments
+				}
+				reverse_add_opinion_modifier = {
+					target = PREV
+					modifier = BALTIC_investments
+				}
+			}
+		}
+		else_if = { # (American) Fallback to USA
+			limit = {
+				USA = { 
+					exists = yes
+					has_capitulated = no
+					has_government = conservatives
+					NOT = { has_war_with = ROOT }
+				}
+			}
+			USA = {
+				add_opinion_modifier = {
+					target = PREV
+					modifier = BALTIC_investments
+				}
+				reverse_add_opinion_modifier = {
+					target = PREV
+					modifier = BALTIC_investments
+				}
+			}
+		}
+		else_if = { # (European) Fallback to another European Democracy
+			limit = { suitable_conservatives_major_in_europe = yes	}
+			random_other_country = {
+				limit = { 
+					is_major = yes
+					capital_scope = { is_on_continent = europe }
+					exists = yes
+					has_capitulated = no
+					has_government = conservatives
+					NOT = { has_war_with = ROOT }
+				}
+				add_opinion_modifier = {
+					target = PREV
+					modifier = BALTIC_investments
+				}
+				reverse_add_opinion_modifier = {
+					target = PREV
+					modifier = BALTIC_investments
+				}
+			}
+		}
+		else_if = { # (International) Fallback to any conservatives faction leader. 
+			limit = {
+				any_other_country = {
+					is_faction_leader = yes
+					has_government = neutrality
+				}
+			}
+			get_best_alliance_match_conservatives_effect = yes
+			var:best_leader = {
+				add_opinion_modifier = {
+					target = PREV
+					modifier = BALTIC_investments
+				}
+				reverse_add_opinion_modifier = {
+					target = PREV
+					modifier = BALTIC_investments
+				}
+			}
+		}
+		if = {
+			limit = {
+				has_idea = export_focus
+			}
+			swap_ideas = {
+				remove_idea = export_focus
+				add_idea = free_trade
+			}
+		}
+		if = {
+			limit = {
+				has_idea = limited_exports
+			}
+			swap_ideas = {
+				remove_idea = limited_exports
+				add_idea = free_trade
+			}
+		}
+		if = {
+			limit = {
+				has_idea = closed_economy
+			}
+			swap_ideas = {
+				remove_idea = closed_economy
+				add_idea = free_trade
+			}
+		}
+	}
+}
+
+shared_focus = {
+	id = UUU_ford_motors
+	icon = GFX_goal_generic_army_motorized
+	prerequisite = { focus = UUU_closer_ties }
+	x = -1
+	y = 1
+	relative_position_id = UUU_closer_ties
+
+	cost = 10
+
+	ai_will_do = {
+		factor = 1
+	}
+
+	available = {
+		any_other_country = {
+			exists = yes
+			has_capitulated = no
+			has_government = conservatives
+			is_major = yes
+			NOT = { has_war_with = ROOT }
+		}
+	}
+
+	bypass = {
+
+	}
+
+	cancel_if_invalid = yes
+	continue_if_invalid = no
+	available_if_capitulated = no
+
+	search_filters = { FOCUS_FILTER_INDUSTRY }
+	completion_reward = {
+
+		add_offsite_building = { type = arms_factory level = 1 }
+
+		if = {
+			limit = {
+				NOT = {
+					has_tech = motorised_infantry
+				}
+			}
+			add_tech_bonus = {
+				name = UUU_ford
+				bonus = 0.5
+				uses = 1
+				category = motorized_equipment
+			}
+		}
+		else = { #separate tech bonus to ensure trucks get the bonus, due to the way ahead of time reduction works
+			add_tech_bonus = {
+				name = UUU_ford
+				ahead_reduction = 2
+				bonus = 0.5
+				uses = 1
+				category = motorized_equipment
+			}
+		}
+
+		custom_effect_tooltip = generic_skip_one_line_tt
+
+		IF = {
+			limit = {
+					has_dlc = "Arms Against Tyranny"
+			}	
+			custom_effect_tooltip = available_mio_tt
+			show_mio_tooltip = USA_ford_motor_company_organization
+
+			mio:USA_ford_motor_company_organization = {
+				add_mio_size = 2
+			}
+		}
+		ELSE = {
+			show_ideas_tooltip = UUU_ford
+		}
+
+	}
+}
+
+shared_focus = {
+	id = UUU_crossley_motors
+	icon = GFX_goal_generic_army_motorized
+	prerequisite = { focus = UUU_ford_motors focus = UUU_british_aircraft }
+	x = 0
+	y = 1
+	relative_position_id = UUU_ford_motors
+
+	cost = 10
+
+	ai_will_do = {
+		factor = 1
+	}
+
+	available = {
+		any_other_country = {
+			exists = yes
+			has_capitulated = no
+			has_government = conservatives
+			is_major = yes
+			NOT = { has_war_with = ROOT }
+		}
+	}
+
+	bypass = {
+
+	}
+
+	cancel_if_invalid = yes
+	continue_if_invalid = no
+	available_if_capitulated = no
+
+	search_filters = { FOCUS_FILTER_INDUSTRY }
+	completion_reward = {
+
+		add_offsite_building = { type = industrial_complex level = 2 }
+		add_offsite_building = { type = arms_factory level = 2 }
+
+		custom_effect_tooltip = generic_skip_one_line_tt
+
+		IF = {
+			limit = {
+				has_dlc = "Arms Against Tyranny"
+			}
+
+			custom_effect_tooltip = available_mio_tt
+			show_mio_tooltip = ENG_crossley_motors_organization
+
+			mio:ENG_crossley_motors_organization = {
+				add_mio_size = 2
+			}
+
+		}
+
+	}
+}
+
+shared_focus = {
+	id = UUU_british_designers
+	icon = GFX_goal_generic_major_alliance
+	prerequisite = { focus = UUU_crossley_motors }
+	x = 0
+	y = 1
+	relative_position_id = UUU_crossley_motors
+
+	cost = 10
+
+	ai_will_do = {
+		factor = 1
+	}
+
+	available = {
+		ENG = {
+			exists = yes
+			has_capitulated = no
+			has_government = conservatives
+			NOT = { has_war_with = ROOT }
+		}
+	}
+
+	bypass = {
+
+	}
+
+	cancel_if_invalid = yes
+	continue_if_invalid = no
+	available_if_capitulated = no
+
+	search_filters = { FOCUS_FILTER_INDUSTRY }
+	completion_reward = {
+		add_offsite_building = { type = industrial_complex level = 1 }
+		add_offsite_building = { type = arms_factory level = 1 }
+
+		custom_effect_tooltip = generic_skip_one_line_tt
+
+		IF = {
+			limit = {
+				has_dlc = "Arms Against Tyranny"
+			}	
+			custom_effect_tooltip = available_mio_tt
+			show_mio_tooltip = BALTIC_RAF_organization
+			mio:BALTIC_RAF_organization = {
+				add_mio_size = 1
+			}
+			show_mio_tooltip = ENG_royal_arsenal_organization
+			mio:ENG_royal_arsenal_organization = {
+				add_mio_size = 1
+			}
+			show_mio_tooltip = ENG_rsaf_enfield_organization
+			mio:ENG_rsaf_enfield_organization = {
+				add_mio_size = 1
+			}
+			
+		}
+		ELSE = {
+			show_ideas_tooltip = BALTIC_RAF
+			show_ideas_tooltip = BALTIC_RSAF_enfield
+			show_ideas_tooltip = BALTIC_royal_arsenal
+		}
+	}
+}
+
+shared_focus = {
+	id = UUU_british_aircraft
+	icon = GFX_goal_generic_air_fighter
+	dynamic = yes
+	prerequisite = { focus = UUU_closer_ties }
+	x = 1
+	y = 1
+	relative_position_id = UUU_closer_ties
+
+	cost = 10
+
+	ai_will_do = {
+		factor = 1
+	}
+
+	available = {
+		any_other_country = {
+			exists = yes
+			has_capitulated = no
+			has_government = conservatives
+			is_major = yes
+			NOT = { has_war_with = ROOT }
+		}
+	}
+
+	bypass = {
+
+	}
+
+	cancel_if_invalid = yes
+	continue_if_invalid = no
+	available_if_capitulated = no
+
+	search_filters = { FOCUS_FILTER_INDUSTRY }
+	completion_reward = {
+		air_experience = 40
+		## Checking for valid Democractic Countries to get aircraft from
+		if = { #Checking for UK 
+			limit = {
+				ENG = { 
+					exists = yes
+					has_capitulated = no
+					has_government = conservatives
+					is_faction_leader = yes
+					NOT = { has_war_with = ROOT }
+				}
+			}
+			ENG = {
+				give_aircraft_and_licences = yes
+			}
+			if = {
+				limit = {
+					has_dlc = "Arms Against Tyranny"
+				}
+				add_equipment_subsidy = {
+					cic = 500
+					equipment_type = small_plane_airframe
+					seller_tags  = { ENG }
+				}
+			}
+		}
+		else_if = { # (Allied) Fallback to France 
+			limit = {
+				FRA = { 
+					exists = yes
+					has_capitulated = no
+					has_government = conservatives
+					is_faction_leader = yes
+					NOT = { has_war_with = ROOT }
+				}
+			}
+			FRA = {
+				give_aircraft_and_licences = yes
+			}
+			if = {
+				limit = {
+					has_dlc = "Arms Against Tyranny"
+				}
+				add_equipment_subsidy = {
+					cic = 500
+					equipment_type = small_plane_airframe
+					seller_tags  = { FRA }
+				}
+			}
+		}
+		else_if = { # (American) Fallback to USA
+			limit = {
+				USA = { 
+					exists = yes
+					has_capitulated = no
+					has_government = conservatives
+					NOT = { has_war_with = ROOT }
+				}
+			}
+			USA = {
+				give_aircraft_and_licences = yes
+			}
+			if = {
+				limit = {
+					has_dlc = "Arms Against Tyranny"
+				}
+				add_equipment_subsidy = {
+					cic = 500
+					equipment_type = small_plane_airframe
+					seller_tags  = { USA }
+				}
+			}
+		}
+		else_if = { # (European) Fallback to another European Democracy
+			limit = { suitable_conservatives_major_in_europe = yes	}
+			random_other_country = {
+				limit = { 
+					is_major = yes
+					capital_scope = { is_on_continent = europe }
+					exists = yes
+					has_capitulated = no
+					has_government = conservatives
+					NOT = { has_war_with = ROOT }
+				}
+				give_aircraft_and_licences = yes
+			}
+			if = {
+				limit = {
+					has_dlc = "Arms Against Tyranny"
+				}
+				add_equipment_subsidy = {
+					cic = 500
+					equipment_type = small_plane_airframe
+					seller_trigger = is_democracy_seller_trigger
+				}
+			}
+		}
+		else = { # (International) Fallback to any conservatives faction leader. 
+			get_best_alliance_match_conservatives_effect = yes
+			var:best_leader = {
+				give_aircraft_and_licences = yes
+			}
+		}
+	}
+}
+
+shared_focus = {
+	id = UUU_allied_shipments
+	icon = GFX_goal_generic_small_arms
+	prerequisite = { focus = UUU_british_aircraft focus = UUU_ford_motors }
+	x = 0
+	y = 1
+	relative_position_id = UUU_british_aircraft
+
+	cost = 10
+
+	ai_will_do = {
+		factor = 1
+	}
+
+	available = {
+		any_other_country = {
+			exists = yes
+			has_capitulated = no
+			has_government = conservatives
+			is_major = yes
+			NOT = { has_war_with = ROOT }
+		}
+	}
+
+	bypass = {
+
+	}
+
+	cancel_if_invalid = yes
+	continue_if_invalid = no
+	available_if_capitulated = no
+
+	search_filters = { FOCUS_FILTER_INDUSTRY }
+	completion_reward = {
+		if = { #Checking for UK 
+			limit = {
+				ENG = { 
+					exists = yes
+					has_capitulated = no
+					has_government = conservatives
+					is_faction_leader = yes
+					NOT = { has_war_with = ROOT }
+				}
+			}
+			ENG = {
+				baltic_give_allied_equipment = yes
+			}
+			if = {
+				limit = {
+					has_dlc = "Arms Against Tyranny"
+				}
+				add_equipment_subsidy = {
+					cic = 250
+					equipment_type = infantry_equipment
+					seller_tags  = { ENG }
+				}
+			}
+		}
+		else_if = { # (Allied) Fallback to France 
+			limit = {
+				FRA = { 
+					exists = yes
+					has_capitulated = no
+					has_government = conservatives
+					is_faction_leader = yes
+					NOT = { has_war_with = ROOT }
+				}
+			}
+			FRA = {
+				baltic_give_allied_equipment = yes
+			}
+			if = {
+				limit = {
+					has_dlc = "Arms Against Tyranny"
+				}
+				add_equipment_subsidy = {
+					cic = 250
+					equipment_type = infantry_equipment
+					seller_tags  = { FRA }
+				}
+			}
+		}
+		else_if = { # (American) Fallback to USA
+			limit = {
+				USA = { 
+					exists = yes
+					has_capitulated = no
+					has_government = conservatives
+					NOT = { has_war_with = ROOT }
+				}
+			}
+			USA = {
+				baltic_give_allied_equipment = yes
+			}
+			if = {
+				limit = {
+					has_dlc = "Arms Against Tyranny"
+				}
+				add_equipment_subsidy = {
+					cic = 250
+					equipment_type = infantry_equipment
+					seller_tags  = { USA }
+				}
+			}
+		}
+		else_if = { # (European) Fallback to another European Democracy
+			limit = { suitable_conservatives_major_in_europe = yes	}
+			random_other_country = {
+				limit = { 
+					is_major = yes
+					capital_scope = { is_on_continent = europe }
+					exists = yes
+					has_capitulated = no
+					has_government = conservatives
+					NOT = { has_war_with = ROOT }
+				}
+				baltic_give_allied_equipment = yes
+			}
+			if = {
+				limit = {
+					has_dlc = "Arms Against Tyranny"
+				}
+				add_equipment_subsidy = {
+					cic = 250
+					equipment_type = infantry_equipment
+					seller_trigger = is_democracy_seller_trigger
+				}
+			}
+		}
+		else = { # (International) Fallback to any conservatives faction leader. 
+			get_best_alliance_match_conservatives_effect = yes
+			var:best_leader = {
+				baltic_give_allied_equipment = yes
+			}
+		}
+	}
+}
+
+shared_focus = {
+	id = UUU_australasian_fleet
+	icon = GFX_goal_generic_construct_naval_dockyard
+	prerequisite = { focus = UUU_allied_shipments }
+	x = 0
+	y = 1
+	relative_position_id = UUU_allied_shipments
+
+	cost = 10
+
+	ai_will_do = {
+		factor = 1
+	}
+
+	available = {
+		any_owned_state = {
+			is_coastal = yes
+		}
+		any_other_country = {
+			exists = yes
+			has_capitulated = no
+			has_government = conservatives
+			is_major = yes
+			NOT = { has_war_with = ROOT }
+		}
+	}
+
+	bypass = {
+
+	}
+
+	cancel_if_invalid = yes
+	continue_if_invalid = no
+	available_if_capitulated = no
+
+	search_filters = { FOCUS_FILTER_INDUSTRY }
+	completion_reward = {
+		navy_experience = 30
+		random_owned_controlled_state = {
+			limit = { is_coastal = yes }
+			add_extra_state_shared_building_slots = 3
+			add_building_construction = {
+				type = dockyard
+				level = 3
+				instant_build = yes
+			}
+		}
+		if = {
+			limit = { tag = WST }
+			if = {
+				limit = { controls_state = 189 }
+				189 = {
+					add_building_construction = { type = coastal_bunker province = 6314 level = 4 instant_build = yes }
+				}
+			}
+			if = {
+				limit = { controls_state = 188 }
+				188 = {
+					add_building_construction = { type = coastal_bunker province = 3288 level = 4 instant_build = yes }
+				}
+			}
+		}
+		if = {
+			limit = { tag = AST }
+			every_owned_state = {
+				limit = {
+					controller = { tag = ROOT }
+					OR = {
+						state = 811
+						state = 13
+						state = 812
+						state = 813
+					}
+				}
+				add_building_construction = {
+					type = coastal_bunker
+					province = {
+						all_provinces = yes
+						limit_to_coastal = yes
+					}
+					level = 2
+					instant_build = yes
+				}
+			}
+		}
+		if = {
+			limit = { tag = NZL }
+			every_owned_state = {
+				limit = {
+					controller = { tag = ROOT }
+					OR = {
+						state = 190
+						state = 809
+						state = 808
+						state = 12
+					}
+				}
+				add_building_construction = {
+					type = coastal_bunker
+					province = {
+						all_provinces = yes
+						limit_to_coastal = yes
+					}
+					level = 2
+					instant_build = yes
+				}
+			}
+		}
+	}
+}
+
+#Attract workers
+shared_focus = {
+	id = UUU_attract_workers_to_capital
+	icon = GFX_goal_generic_construct_civilian
+	prerequisite = { focus = UUU_rejoin_the_railways }
+	x = 0
+	y = 1
+	relative_position_id = UUU_rejoin_the_railways
+
+	cost = 10
+
+	ai_will_do = {
+		factor = 1
+	}
+
+	available = {
+	}
+
+	bypass = {
+
+	}
+
+	cancel_if_invalid = yes
+	continue_if_invalid = no
+	available_if_capitulated = no
+
+	search_filters = { FOCUS_FILTER_INDUSTRY }
+	completion_reward = {
+		capital_scope = {
+			add_extra_state_shared_building_slots = 2
+			add_building_construction = {
+				type = industrial_complex
+				level = 2
+				instant_build = yes
+			}
+		}
+	}
+}
+
+shared_focus = {
+	id = UUU_arm_the_nation
+	icon = GFX_goal_generic_construct_mil_factory
+	prerequisite = { focus = UUU_attract_workers_to_capital }
+	x = 0
+	y = 2
+	relative_position_id = UUU_attract_workers_to_capital
+
+	cost = 10
+
+	ai_will_do = {
+		factor = 1
+	}
+
+	available = {
+	}
+
+	bypass = {
+
+	} 
+
+	cancel_if_invalid = yes
+	continue_if_invalid = no
+	available_if_capitulated = no
+
+	search_filters = { FOCUS_FILTER_INDUSTRY }
+	completion_reward = {
+		random_owned_controlled_state = {
+			limit = {
+				is_core_of = ROOT
+			}
+			prioritize = { 11 12 13 }
+			add_extra_state_shared_building_slots = 1
+			add_building_construction = {
+				type = arms_factory
+				level = 1
+				instant_build = yes
+			}
+		}
+		random_owned_controlled_state = {
+			limit = {
+				is_core_of = ROOT
+			}
+			prioritize = { 814 808 811 }
+			add_extra_state_shared_building_slots = 1
+			add_building_construction = {
+				type = arms_factory
+				level = 1
+				instant_build = yes
+			}
+		}
+		random_owned_controlled_state = {
+			limit = {
+				is_core_of = ROOT
+			}
+			prioritize = { 188 810 813 }
+			add_extra_state_shared_building_slots = 1
+			add_building_construction = {
+				type = arms_factory
+				level = 1
+				instant_build = yes
+			}
+		}
+	}
+}
+
+shared_focus = {
+	id = UUU_unchain_education
+	icon = GFX_focus_research
+	prerequisite = { focus = UUU_attract_workers_to_capital }
+	x = 2
+	y = 2
+	relative_position_id = UUU_attract_workers_to_capital
+
+	cost = 10
+
+	ai_will_do = {
+		factor = 1
+	}
+
+	available = {
+		industrial_complex > 15
+	}
+
+	bypass = {
+
+	}
+
+	cancel_if_invalid = yes
+	continue_if_invalid = no
+	available_if_capitulated = no
+
+	search_filters = { FOCUS_FILTER_RESEARCH }
+	completion_reward = {
+		add_research_slot = 1
+	}
+}
+
+shared_focus = {
+	id = UUU_technology_sharing
+	icon = GFX_goal_tfv_generic_tech_sharing
+	prerequisite = { focus = UUU_unchain_education }
+	x = 0
+	y = 1
+	relative_position_id = UUU_unchain_education
+
+	cost = 10
+
+	ai_will_do = {
+		factor = 1
+	}
+
+	available = {
+		is_in_faction = yes
+		is_subject = no
+	}
+
+	cancel_if_invalid = yes
+	continue_if_invalid = no
+	available_if_capitulated = no
+
+	search_filters = { FOCUS_FILTER_RESEARCH }
+	completion_reward = {
+		if = {
+			limit = {
+				NOT = {
+					any_other_country = {
+						is_in_tech_sharing_group = baltic_allied_research
+					}
+				}
+			}
+			custom_effect_tooltip = BALTIC_tech_sharing_tt
+			hidden_effect = {
+				add_to_tech_sharing_group = baltic_allied_research
+				every_other_country = {
+					limit = {
+						is_in_faction_with = ROOT
+					}
+					add_to_tech_sharing_group = baltic_allied_research
+				}
+			}
+		}
+		add_research_slot = 1
+	}
+}
+
+shared_focus = {
+	id = UUU_defence_of_our_nation
+	icon = GFX_goal_generic_defence
+	prerequisite = { focus = UUU_arm_the_nation }
+	x = 0
+	y = 1
+	relative_position_id = UUU_arm_the_nation
+
+	cost = 10
+
+	ai_will_do = {
+		factor = 1
+	}
+
+	available = {
+	}
+
+	bypass = {
+
+	}
+
+	cancel_if_invalid = yes
+	continue_if_invalid = no
+	available_if_capitulated = no
+
+	search_filters = { FOCUS_FILTER_INDUSTRY }
+	completion_reward = {
+		add_ideas = BALTIC_defending_the_nation
+	}
+}
+
+#Modernized industry
+shared_focus = {
+	id = UUU_modernize_industry
+	icon = GFX_focus_generic_industry_1
+	prerequisite = { focus = UUU_rejoin_the_railways }
+	x = 4
+	y = 1
+	relative_position_id = UUU_rejoin_the_railways
+
+	cost = 10
+
+	ai_will_do = {
+		factor = 1
+	}
+
+	available = {
+	}
+
+	bypass = {
+
+	}
+
+	cancel_if_invalid = yes
+	continue_if_invalid = no
+	available_if_capitulated = no
+
+	search_filters = { FOCUS_FILTER_INDUSTRY }
+	completion_reward = {
+		if = {
+			limit = { original_tag = WST }
+			swap_ideas = {
+				remove_idea = WST_agrarian_society
+				add_idea = WST_invested_in_farms
+			}
+		}
+		random_owned_controlled_state = {
+			limit = {
+				is_core_of = ROOT
+			}
+			prioritize = { 11 12 13 }
+			add_extra_state_shared_building_slots = 1
+			add_building_construction = {
+				type = industrial_complex
+				level = 1
+				instant_build = yes
+			}
+		}
+		random_owned_controlled_state = {
+			limit = {
+				is_core_of = ROOT
+			}
+			prioritize = { 189 190 191 }
+			add_extra_state_shared_building_slots = 1
+			add_building_construction = {
+				type = industrial_complex
+				level = 1
+				instant_build = yes
+			}
+		}
+		random_owned_controlled_state = {
+			limit = {
+				is_core_of = ROOT
+			}
+			prioritize = { 814 808 811 }
+			add_extra_state_shared_building_slots = 1
+			add_building_construction = {
+				type = industrial_complex
+				level = 1
+				instant_build = yes
+			}
+		}
+		random_owned_controlled_state = {
+			limit = {
+				is_core_of = ROOT
+			}
+			prioritize = { 815 809 812 }
+			add_extra_state_shared_building_slots = 1
+			add_building_construction = {
+				type = industrial_complex
+				level = 1
+				instant_build = yes
+			}
+		}
+	}
+}
+
+shared_focus = {
+	id = UUU_domestic_motors
+	icon = GFX_goal_generic_army_tanks
+	prerequisite = { focus = UUU_modernize_industry }
+	x = -1
+	y = 1
+	relative_position_id = UUU_modernize_industry
+
+	cost = 10
+
+	ai_will_do = {
+		factor = 1
+	}
+
+	available = {
+	}
+
+	bypass = {
+
+	}
+
+	cancel_if_invalid = yes
+	continue_if_invalid = no
+	available_if_capitulated = no
+
+	search_filters = { FOCUS_FILTER_INDUSTRY }
+	completion_reward = {
+		random_owned_controlled_state = {
+			limit = {
+				free_building_slots = {
+					building = arms_factory
+					size > 0
+					include_locked = yes
+				}
+				OR = {
+					is_in_home_area = yes
+					NOT = {
+						owner = {
+							any_owned_state = {
+								free_building_slots = {
+									building = arms_factory
+									size > 0
+									include_locked = yes
+								}
+								is_in_home_area = yes
+							}
+						}
+					}
+				}
+			}
+			add_extra_state_shared_building_slots = 2
+			add_building_construction = {
+				type = arms_factory
+				level = 2
+				instant_build = yes
+			}
+		}
+	}
+}
+
+shared_focus = {
+	id = UUU_school_of_aviation
+	icon = GFX_goal_generic_air_fighter2
+	prerequisite = { focus = UUU_modernize_industry }
+	x = 1
+	y = 1
+	relative_position_id = UUU_modernize_industry
+
+	cost = 10
+
+	ai_will_do = {
+		factor = 1
+	}
+
+	available = {
+	}
+
+	bypass = {
+
+	}
+
+	cancel_if_invalid = yes
+	continue_if_invalid = no
+	available_if_capitulated = no
+
+	search_filters = { FOCUS_FILTER_INDUSTRY FOCUS_FILTER_RESEARCH }
+	completion_reward = {
+		air_experience = 25
+		if = {
+			limit = {
+				capital_scope = {
+					NOT = {
+						free_building_slots = {
+							building = air_base
+							size > 1
+						}
+					}
+				}
+			}
+			random_owned_controlled_state = {
+				limit = {
+					free_building_slots = {
+						building = air_base
+						size > 1
+					}
+				}
+				add_building_construction = {
+					type = air_base
+					level = 2
+					instant_build = yes
+				}
+				ROOT = { set_country_flag = aviation_effort_AB }
+			}
+		}
+		if = {
+			limit = {
+				capital_scope = {
+					free_building_slots = {
+						building = air_base
+						size > 1
+					}
+				}
+			}
+			capital_scope = {
+				add_building_construction = {
+					type = air_base
+					level = 2
+					instant_build = yes
+				}
+				ROOT = { set_country_flag = aviation_effort_AB }
+			}
+		}
+		add_doctrine_cost_reduction = {
+			name = air_doc_bonus
+			cost_reduction = 0.5
+			uses = 1
+			category = air_doctrine
+		}
+		add_tech_bonus = {
+			name = UUU_school_of_aviation_tech_bonus
+			bonus = 0.5
+			uses = 2
+			category = air_equipment
+		}
+	}
+}
+
+shared_focus = {
+	id = UUU_original_designs
+	icon = GFX_goal_generic_small_arms
+	prerequisite = { focus = UUU_domestic_motors focus = UUU_school_of_aviation }
+	x = 1
+	y = 1
+	relative_position_id = UUU_domestic_motors
+
+	cost = 10
+
+	ai_will_do = {
+		factor = 1
+	}
+
+	available = {
+	}
+
+	bypass = {
+
+	}
+
+	cancel_if_invalid = yes
+	continue_if_invalid = no
+	available_if_capitulated = no
+
+	search_filters = { FOCUS_FILTER_RESEARCH }
+	completion_reward = {
+		add_tech_bonus = {
+			name = UUU_original_designs
+			bonus = 0.5
+			uses = 1
+			category = infantry_weapons
+		}
+		add_tech_bonus = {
+			name = UUU_original_designs
+			bonus = 0.5
+			uses = 1
+			category = artillery
+		}
+		add_tech_bonus = {
+			name = UUU_original_designs
+			bonus = 0.5
+			uses = 1
+			category = armor
+		}
+	}
+}
+
+shared_focus = {
+	id = UUU_arms_industry
+	icon = GFX_goal_generic_construct_mil_factory
+	prerequisite = { focus = UUU_original_designs }
+	prerequisite = { focus = UUU_defence_of_our_nation }
+	x = 0
+	y = 2
+	relative_position_id = UUU_original_designs
+
+	cost = 10
+
+	ai_will_do = {
+		factor = 1
+	}
+
+	available = {
+	}
+
+	bypass = {
+
+	}
+
+	cancel_if_invalid = yes
+	continue_if_invalid = no
+	available_if_capitulated = no
+
+	search_filters = { FOCUS_FILTER_INDUSTRY }
+	completion_reward = {
+		random_owned_controlled_state = {
+			limit = {
+				is_core_of = ROOT
+			}
+			prioritize = { 814 808 811 }
+			add_extra_state_shared_building_slots = 1
+			add_building_construction = {
+				type = arms_factory
+				level = 1
+				instant_build = yes
+			}
+		}
+		random_owned_controlled_state = {
+			limit = {
+				is_core_of = ROOT
+			}
+			prioritize = { 815 809 812 }
+			add_extra_state_shared_building_slots = 1
+			add_building_construction = {
+				type = arms_factory
+				level = 1
+				instant_build = yes
+			}
+		}
+		capital_scope = {
+			add_extra_state_shared_building_slots = 2
+			add_building_construction = {
+				type = arms_factory
+				level = 2
+				instant_build = yes
+			}
+		}
+	}
+}
+
+shared_focus = {
+	id = UUU_natural_resources
+
+	dynamic = yes
+
+	icon = {
+		trigger = {
+			original_tag = AST
+		}
+		value = GFX_goal_generic_oil_refinery
+	}
+	icon = {
+		trigger = {
+			original_tag = WST
+		}
+		value = GFX_focus_generic_agricultural_subsidies
+	}
+	icon = {
+		trigger = {
+			original_tag = NZL
+		}
+		value = GFX_focus_generic_steel
+	}
+
+	prerequisite = { focus = UUU_modernize_industry }
+
+	x = 3
+	y = 1
+	relative_position_id = UUU_modernize_industry
+
+	cost = 10
+
+	ai_will_do = {
+		factor = 1
+	}
+
+	available = {
+	}
+
+	bypass = {
+
+	}
+
+	cancel_if_invalid = yes
+	continue_if_invalid = no
+	available_if_capitulated = no
+
+	search_filters = { FOCUS_FILTER_INDUSTRY }
+	completion_reward = {
+		if = {
+			limit = { original_tag = WST }
+			swap_ideas = {
+				remove_idea = WST_invested_in_farms
+				add_idea = WST_invested_in_farms_1
+			}
+		}
+		else_if = {
+			limit = { original_tag = NZL }
+			190 = {
+				add_resource = {
+					type = steel
+					amount = 16
+				}
+			}
+		}
+		else_if = {
+			limit = { original_tag = AST }
+			13 = {
+				add_resource = {
+					type = oil
+					amount = 8
+				}
+			}
+		}
+	}
+}
+
+shared_focus = {
+	id = UUU_trade_with_neighbors
+	icon = GFX_goal_generic_positive_trade_relations
+	prerequisite = { focus = UUU_natural_resources }
+	mutually_exclusive = { focus = UUU_invest_in_australasian_trade }
+	x = -1
+	y = 1
+	relative_position_id = UUU_natural_resources
+
+	cost = 10
+
+	ai_will_do = {
+		factor = 1
+	}
+
+	available = {
+	}
+
+	bypass = {
+
+	}
+
+	cancel_if_invalid = yes
+	continue_if_invalid = no
+	available_if_capitulated = no
+
+	search_filters = { FOCUS_FILTER_INDUSTRY }
+	completion_reward = {
+		every_other_country = {
+			limit = {
+				OR = {
+					original_tag = AST
+					original_tag = NZL
+					original_tag = WST
+				}
+				NOT = { original_tag = ROOT }
+			}
+			add_opinion_modifier = {
+				target = PREV
+				modifier = BALTIC_trade
+			}
+		}
+		if = {
+			limit = { original_tag = WST }
+			random_owned_controlled_state = {
+				limit = {
+					free_building_slots = {
+						building = industrial_complex
+						size > 0
+						include_locked = yes
+					}
+					OR = {
+						is_in_home_area = yes
+						NOT = {
+							owner = {
+								any_owned_state = {
+									free_building_slots = {
+										building = industrial_complex
+										size > 0
+										include_locked = yes
+									}
+									is_in_home_area = yes
+								}
+							}
+						}
+					}
+				}
+				add_extra_state_shared_building_slots = 1
+				add_building_construction = {
+					type = industrial_complex
+					level = 1
+					instant_build = yes
+				}
+			}
+		}
+		else_if = {
+			limit = { original_tag = NZL }
+			190 = {
+				add_resource = {
+					type = steel
+					amount = 8
+				}
+			}
+		}
+		else_if = {
+			limit = { original_tag = AST }
+			13 = {
+				add_resource = {
+					type = oil
+					amount = 4
+				}
+			}
+		}
+	}
+}
+
+shared_focus = {
+	id = UUU_invest_in_australasian_trade
+	icon = GFX_goal_generic_trade
+	prerequisite = { focus = UUU_natural_resources }
+	mutually_exclusive = { focus = UUU_trade_with_neighbors }
+	x = 1
+	y = 1
+	relative_position_id = UUU_natural_resources
+
+	cost = 10
+
+	ai_will_do = {
+		factor = 1
+	}
+
+	available = {
+	}
+
+	bypass = {
+
+	}
+
+	cancel_if_invalid = yes
+	continue_if_invalid = no
+	available_if_capitulated = no
+
+	search_filters = { FOCUS_FILTER_INDUSTRY }
+	completion_reward = {
+		random_owned_controlled_state = {
+			limit = {
+				is_coastal = yes
+				free_building_slots = {
+					building = dockyard
+					size > 0
+					include_locked = yes
+				}
+				OR = {
+					is_in_home_area = yes
+					NOT = {
+						owner = {
+							any_owned_state = {
+								free_building_slots = {
+									building = dockyard
+									size > 0
+									include_locked = yes
+								}
+								is_in_home_area = yes
+							}
+						}
+					}
+				}
+			}
+			add_extra_state_shared_building_slots = 2
+			add_building_construction = {
+				type = dockyard
+				level = 2
+				instant_build = yes
+			}
+		}
+		add_equipment_to_stockpile = {
+			type = convoy
+			amount = 150
+		}
+	}
+}

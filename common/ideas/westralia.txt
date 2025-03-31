@@ -6,5 +6,74 @@ ideas = {
                 stability_factor = -0.1
             }
         }
+		
+		WST_gold_mining = {
+            picture = idea_gold_idea_yeah
+            modifier = {
+                production_speed_buildings_factor = 0.5  	
+				consumer_goods_factor = -0.1
+            }
+        }
+		
+		WST_agrarian_society = {
+
+			picture = generic_agrarian_society
+
+			allowed = {
+				original_tag = WST
+			}
+
+			allowed_civil_war = {
+				always = yes
+			}
+
+			removal_cost = -1
+
+			modifier = {
+				consumer_goods_factor = 0.06
+				conscription_factor = -0.5
+				industrial_capacity_factory	= -0.2
+			}
+		}
+
+		WST_invested_in_farms = {
+			
+			picture = LIT_invested_in_farms
+			
+			allowed = {
+				always = no
+			}
+
+			allowed_civil_war = {
+				always = yes
+			}
+
+			removal_cost = -1
+			
+			modifier = {
+				consumer_goods_factor = -0.03
+				conscription_factor = -0.25
+				industrial_capacity_factory	= -0.05
+			}
+		}
+		
+		WST_invested_in_farms_1 = {
+			
+			picture = WST_invested_in_farms
+			
+			allowed = {
+				always = no
+			}
+
+			allowed_civil_war = {
+				always = yes
+			}
+
+			removal_cost = -1
+			
+			modifier = {
+				consumer_goods_factor = -0.15
+			}
+		}
     }
 }

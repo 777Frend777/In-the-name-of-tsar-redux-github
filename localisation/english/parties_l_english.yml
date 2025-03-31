@@ -1141,3 +1141,7 @@ l_english:
 #Peshmerga
  PSM_neutrality_party:0 "KNLP"
  PSM_neutrality_party_long:0 "Kurdistan National Liberation Party"
+
+#San Marino
+ SMR_fascism_party:0 "PFS"
+ SMR_fascism_party_long:0 "Partito Fascista Sammarinese"

@@ -1,1 +1,22 @@
-﻿#
+﻿focus_tree = {
+	id = aust
+	country = {
+		factor = 0
+		modifier = {
+			add = 10
+			tag = AST
+		}
+	}
+	
+	shared_focus = UUU_rejoin_the_railways 
+	
+	focus = {
+		id = AST_?
+		icon = GFX_markov_focus
+		cost = 1
+		x = 3
+		y = 0
+		completion_reward = {
+		}
+	}
+}
