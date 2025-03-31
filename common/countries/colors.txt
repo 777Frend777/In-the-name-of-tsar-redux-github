@@ -655,3 +655,19 @@ ZDA = {
 	color = rgb { 0 104 10 }
 	color_ui = rgb { 0 104 10 }
 }
+TIZ = {
+	color = rgb { 193 39 45 }
+	color_ui = rgb { 216 71 76 }		
+}
+ADO = {
+	color = rgb { 197 169 38 }
+	color_ui = rgb { 233 205 61 }
+}
+MCO = {
+	color = rgb { 206 17 38 }
+	color_ui = rgb { 240 68 85 }
+}
+SMR = {
+	color = rgb { 94 182 228 }
+	color_ui = rgb { 138 213 255 }
+}

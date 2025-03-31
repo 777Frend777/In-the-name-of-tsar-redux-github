@@ -333,4 +333,21 @@ From;To;Type;Through;start_x;start_y;stop_x;stop_y;adjacency_rule_name;Comment
 5951;9037;;-1;-1;-1;-1;-1;URUGUAY_RIVER;EOE new strait
 3314;6336;sea;2752;-1;-1;-1;-1;;Afsluitdijk #FIXED
 
+1450;11645;impassable;-1;-1;-1;-1;-1;;Caucasus Mountains
+1450;6763;impassable;-1;-1;-1;-1;-1;;Caucasus Mountains
+6763;3711;impassable;-1;-1;-1;-1;-1;;Caucasus Mountains
+6763;7554;impassable;-1;-1;-1;-1;-1;;Caucasus Mountains
+6436;7554;impassable;-1;-1;-1;-1;-1;;Caucasus Mountains
+6436;1455;impassable;-1;-1;-1;-1;-1;;Caucasus Mountains
+11609;670;impassable;-1;-1;-1;-1;-1;;Caucasus Mountains
+11609;9628;impassable;-1;-1;-1;-1;-1;;Caucasus Mountains
+11609;11614;impassable;-1;-1;-1;-1;-1;;Caucasus Mountains
+11609;9632;impassable;-1;-1;-1;-1;-1;;Caucasus Mountains
+11609;1530;impassable;-1;-1;-1;-1;-1;;Caucasus Mountains
+9632;11614;impassable;-1;-1;-1;-1;-1;;Caucasus Mountains
+9632;685;impassable;-1;-1;-1;-1;-1;;Caucasus Mountains
+6674;685;impassable;-1;-1;-1;-1;-1;;Caucasus Mountains
+6674;9649;impassable;-1;-1;-1;-1;-1;;Caucasus Mountains
+9649;11664;impassable;-1;-1;-1;-1;-1;;Caucasus Mountains
+
 -1;-1;;-1;-1;-1;-1;-1;-1

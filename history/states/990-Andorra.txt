@@ -1,0 +1,23 @@
+state={
+	id=990
+	name="STATE_990"
+	
+	history={
+		owner = ADO
+		victory_points = {
+			13865 3
+		}
+		buildings = {
+			infrastructure = 1
+		}
+		add_core_of = ADO
+	}
+	
+	provinces={
+		13865
+	}
+	manpower=6000
+	buildings_max_level_factor=1.000
+	state_category=rural
+	local_supplies=0.000
+}
