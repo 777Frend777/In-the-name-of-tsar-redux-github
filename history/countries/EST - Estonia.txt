@@ -6,9 +6,14 @@ set_research_slots = 3
 
 add_ideas = {
 	limited_conscription
-	BAL_special_baltic_order
 }
-
+IF = {
+	limit = { has_dlc = "No Step Back" }
+	add_ideas = {
+		democratic_opposition
+		EST_vaps_idea_1
+	}
+}
 
 set_cosmetic_tag = EST_RUS
 
@@ -44,6 +49,16 @@ IF = {
 	recruit_character = EST_aleksander_jaakson
 	recruit_character = EST_herbert_brede
 	recruit_character = EST_otto_heinze
+}
+
+set_variable = {
+	var = vaps_days_var
+	value = 80
+}
+
+set_variable = {
+	var = vaps_crackdown_var
+	value = 360
 }
 
 set_technology = {
