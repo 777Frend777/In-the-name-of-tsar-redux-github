@@ -997,3 +997,5 @@
  STATE_986: "Vatican"
  STATE_988: "Pechery"
  STATE_989: "Läänemaa"
+ STATE_994: "Sopron"
+ AUS_STATE_994: "Odenburg"

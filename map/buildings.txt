@@ -60639,3 +60639,6 @@
 993;nuclear_reactor_spawn;2999.00;11.93;1652.00;3.16;0
 993;special_project_facility_spawn;2999.00;11.93;1652.00;2.31;0
 993;rocket_site_spawn;2999.00;11.93;1652.00;0.80;0
+8;supply_node;2898.00;11.62;1771.00;2.24;0
+8;bunker;2900.00;11.18;1769.00;3.96;0
+8;special_project_facility_spawn;2901.00;10.90;1765.00;4.25;0
