@@ -34,7 +34,7 @@
 		id = ESTLAND_continue_industrialization
 		icon = GFX_goal_red_star_gold_wreath
         prerequisite = { focus = ESTLAND_position_of_the_province }
-		x = -1
+		x = -2
 		y = 1
         relative_position_id = ESTLAND_position_of_the_province
 		cost = 5
@@ -51,7 +51,7 @@
 		id = ESTLAND_expand_production_of_oil
 		icon = GFX_goal_red_star_gold_wreath
         prerequisite = { focus = ESTLAND_continue_industrialization }
-		x = -1
+		x = -2
 		y = 2
         relative_position_id = ESTLAND_position_of_the_province
 		cost = 0.3
@@ -61,6 +61,60 @@
 		
 	    completion_reward = {
 		    add_manpower = 20000
+            
+	    }
+    }
+
+	focus = {
+		id = ESTLAND_support_the_ruling_party
+		icon = GFX_goal_red_star_gold_wreath
+        prerequisite = { focus = ESTLAND_position_of_the_province }
+		x = 1
+		y = 1
+        relative_position_id = ESTLAND_position_of_the_province
+		cost = 6
+		
+		
+		available_if_capitulated = yes
+		
+	    completion_reward = {
+		    
+            
+	    }
+    }
+
+	focus = {
+		id = ESTLAND_continue_politic_of_russification
+		icon = GFX_goal_red_star_gold_wreath
+        prerequisite = { focus = ESTLAND_support_the_ruling_party }
+		x = 1
+		y = 2
+        relative_position_id = ESTLAND_position_of_the_province
+		cost = 6
+		
+		
+		available_if_capitulated = yes
+		
+	    completion_reward = {
+		    
+            
+	    }
+    }
+
+	focus = {
+		id = ESTLAND_support_the_protest_movements
+		icon = GFX_goal_red_star_gold_wreath
+        prerequisite = { focus = ESTLAND_position_of_the_province }
+		x = 4
+		y = 1
+        relative_position_id = ESTLAND_position_of_the_province
+		cost = 6
+		
+		
+		available_if_capitulated = yes
+		
+	    completion_reward = {
+		    
             
 	    }
     }

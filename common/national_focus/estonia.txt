@@ -309,7 +309,26 @@
 		id = EST_no_step_back
 		icon = GFX_goal_red_star_gold_wreath
 		prerequisite = { focus = EST_second_russo_estonian_war }
+		mutually_exclusive = { focus = EST_evacute_to_saaremaa }
 		x = 1
+		y = 1
+		relative_position_id = EST_second_russo_estonian_war
+		cost = 0.1
+		
+		
+		available_if_capitulated = yes
+		
+	    completion_reward = {
+		    army_experience = 25
+	    }
+    }
+
+	focus = {
+		id = EST_evacute_to_saaremaa
+		icon = GFX_goal_red_star_gold_wreath
+		prerequisite = { focus = EST_second_russo_estonian_war }
+		mutually_exclusive = { focus = EST_no_step_back }
+		x = 3
 		y = 1
 		relative_position_id = EST_second_russo_estonian_war
 		cost = 0.1
@@ -326,6 +345,7 @@
 		id = EST_evacuate
 		icon = GFX_goal_red_star_gold_wreath
 		prerequisite = { focus = EST_second_russo_estonian_war }
+		
 		x = -1
 		y = 1
 		relative_position_id = EST_second_russo_estonian_war
@@ -607,6 +627,23 @@
     }
 
 	focus = {
+		id = EST_external_enemy
+		icon = GFX_goal_red_star_gold_wreath
+		prerequisite = { focus = EST_vapsid_government }
+		x = 3
+		y = 7
+		relative_position_id = EST_postwar_estonia
+		cost = 4
+		
+		
+		available_if_capitulated = yes
+		
+	    completion_reward = {
+ 
+	    }
+    }
+
+	focus = {
 		id = EST_estonian_economy
 		icon = GFX_goal_red_star_gold_wreath
 		x = 43
@@ -662,6 +699,40 @@
 		prerequisite = { focus = EST_modernize_economy }
 		x = -1
 		y = 2
+		relative_position_id = EST_estonian_economy
+		cost = 7
+		
+		
+		available_if_capitulated = yes
+		
+	    completion_reward = {
+ 
+	    }
+    }
+
+	focus = {
+		id = EST_make_export_economy
+		icon = GFX_goal_red_star_gold_wreath
+		prerequisite = { focus = EST_carry_out_monetary_reform }
+		x = -2
+		y = 3
+		relative_position_id = EST_estonian_economy
+		cost = 7
+		
+		
+		available_if_capitulated = yes
+		
+	    completion_reward = {
+ 
+	    }
+    }
+
+	focus = {
+		id = EST_inward_looking_economy
+		icon = GFX_goal_red_star_gold_wreath
+		prerequisite = { focus = EST_carry_out_monetary_reform }
+		x = 0
+		y = 3
 		relative_position_id = EST_estonian_economy
 		cost = 7
 		

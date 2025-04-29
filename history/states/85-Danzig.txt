@@ -32,7 +32,7 @@ state={
 	}
 
 	provinces={
-		362 9263
+		362 9263 13884
 	}
 
 	local_supplies=0.0 

@@ -1,0 +1,23 @@
+
+state={
+	id=997
+	name="STATE_997"
+	manpower = 46362
+	
+	
+	state_category = rural
+
+	history={
+		owner = LAT
+		buildings = {
+			infrastructure = 2
+		}
+		add_core_of = LAT
+	}
+
+	provinces={
+		3298 11222 11302 13874
+	}
+
+	local_supplies=7.0 
+}
