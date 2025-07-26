@@ -1,9 +1,9 @@
 characters = {
 	TIZ_pierre_le_fur = {
-		name = "Pierre Le Fur"
+		name = "Tangier international legislative assembly"
 		portraits = {
 			civilian = {
-				large = GFX_Portrait_Europe_Generic_4
+				large = "gfx/leaders/TIZ/TIZ_international_zone.png"
 			}
 		}
 		country_leader = {

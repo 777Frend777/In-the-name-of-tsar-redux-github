@@ -3,7 +3,7 @@ characters = {
 		name = "Louis II"
 		portraits = {
 			civilian = {
-				large = GFX_Portrait_Europe_Generic_4
+				large = "gfx/leaders/MCO/prince_louis_ii-1.dds"
 			}
 		}
 		country_leader = {

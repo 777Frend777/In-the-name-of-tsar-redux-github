@@ -8229,6 +8229,10 @@ spriteTypes = {
 		texturefile = "gfx/interface/ideas/SLV/SLV_grand_duchy.png"
 	}
 	spriteType = {
+		name = "GFX_idea_MOR_agadir_politik"
+		texturefile = "gfx/interface/ideas/MOR_agadir_politik.png"
+	}
+	spriteType = {
 		name = "GFX_idea_SLV_enemies"
 		texturefile = "gfx/interface/ideas/SLV/SLV_enemies.png"
 	}
